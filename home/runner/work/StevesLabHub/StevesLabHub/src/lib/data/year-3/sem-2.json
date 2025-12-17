@@ -1,0 +1,77 @@
+
+{
+    "subjects": [
+        {
+            "id": "23CS32T1",
+            "name": "Machine Learning",
+            "short": "Core machine learning algorithms and techniques.",
+            "hasLab": true,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32T3",
+            "name": "Cryptography & Network Security",
+            "short": "Concepts of secure communication and cryptography.",
+            "hasLab": true,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32T2",
+            "name": "Cloud Computing",
+            "short": "Fundamentals of cloud computing models and services.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "cyber-security",
+            "name": "Cyber Security",
+            "short": "Principles of cyber defense and threat mitigation.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32P1",
+            "name": "Machine Learning Lab",
+            "short": "Implementation of ML models and algorithms.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32P2",
+            "name": "Cryptography & Network Security Lab",
+            "short": "Practical application of security concepts.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32AC",
+            "name": "Technical Report Writing & IPR",
+            "short": "Skills for research paper writing and IPR concepts.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        },
+        {
+            "id": "23CS32SC",
+            "name": "Soft Skills",
+            "short": "Developing professional communication and interpersonal skills.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 3,
+            "semester": 2
+        }
+    ]
+}
