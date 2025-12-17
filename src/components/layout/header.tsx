@@ -36,7 +36,7 @@ export function Header() {
   const isHomePage = pathname === '/';
 
   const NavLink = ({ href, label, icon: Icon, isMobile = false }: { href: string, label: string, icon: React.ElementType, isMobile?: boolean }) => {
-    const isActive = (pathname === href || (href === '/dashboard' && isDashboardPage) || (href === '/ai-tools' && isAiToolsPage));
+    const isActive = (pathname === href || (href === '/dashboard' && isDashboardPage));
     
     return (
       <Button
