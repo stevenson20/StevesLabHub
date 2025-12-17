@@ -3,6 +3,12 @@
   "subjects": [
     {
       "id": "23CS31P1",
+      "name": "Artificial Intelligence Lab",
+      "short": "Practical implementation of AI algorithms.",
+      "hasLab": true,
+      "isLabOnly": true,
+      "year": 3,
+      "semester": 1,
       "programs": [
         {
           "id": "ai-p1-bfs",
@@ -138,6 +144,12 @@
     },
     {
       "id": "23AD31SC",
+      "name": "Full Stack Development-II Lab",
+      "short": "Frontend, backend, APIs and full stack mini projects.",
+      "hasLab": true,
+      "isLabOnly": true,
+      "year": 3,
+      "semester": 1,
       "programs": [
         {
           "id": "fsd-p1-math-tool",
@@ -251,6 +263,12 @@
     },
     {
       "id": "23CS31P2",
+      "name": "Computer Networks Lab",
+      "short": "Socket programming, protocols, simulation programs.",
+      "hasLab": true,
+      "isLabOnly": true,
+      "year": 3,
+      "semester": 1,
       "programs": [
         {
           "id": "cn-1",
@@ -328,6 +346,12 @@
     },
     {
       "id": "23ES31P1",
+      "name": "Tinkering Lab",
+      "short": "Hardware, IoT, experiments and prototypes.",
+      "hasLab": true,
+      "isLabOnly": true,
+      "year": 3,
+      "semester": 1,
       "programs": [
         {
           "id": "tinker-4",
@@ -610,7 +634,7 @@
     {
       "id": "syllabus-cyber-security",
       "title": "Cyber Security Syllabus",
-      "subjectId": "cyber-security",
+      "subjectId": "23CS32E2",
       "type": "PDF",
       "url": "/syllabi/cyber-security-syllabus.pdf"
     }

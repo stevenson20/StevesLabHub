@@ -68,22 +68,23 @@ const subjectColorMap: Record<string, Subject['color']> = {
   '23A40505': 'spm',
   '23A40506': 'fsd',
   '23A49901': 'tinkering',
-  '23CS31T1': 'ai', // AI
-  '23CS31P1': 'ai', // AI Lab
-  '23CS31T2': 'cn', // CN & IP
-  '23CS31P2': 'cn', // CN & IP Lab
-  '23CS31T3': 'fsd', // ATCD
-  '23CS31E4': 'spm', // DMDW
-  '23AD31SC': 'fsd', // FSD-II
-  '23ES31P1': 'tinkering', // Tinkering Lab
-  '23ES31T1': 'ai', // Quantum Tech
-  '23CS32T1': 'ml', // Machine Learning
-  '23CS32P1': 'ml', // Machine Learning Lab
-  '23CS32T3': 'cns', // Cryptography & Network Security
-  '23CS32P2': 'cns', // CNS Lab
-  '23CS32T2': 'cloud', // Cloud Computing
-  '23CS32AC': 'writing', // TRW & IPR
-  '23CS32SC': 'speaking', // Soft skills
+  '23CS31T1': 'ai',
+  '23CS31P1': 'ai',
+  '23CS31T2': 'cn',
+  '23CS31P2': 'cn',
+  '23CS31T3': 'fsd',
+  '23CS31E4': 'spm',
+  '23AD31SC': 'fsd',
+  '23ES31P1': 'tinkering',
+  '23ES31T1': 'ai',
+  '23CS32T1': 'ml',
+  '23CS32P1': 'ml',
+  '23CS32T3': 'cns',
+  '23CS32P2': 'cns',
+  '23CS32T2': 'cloud',
+  '23CS32E2': 'cyber',
+  '23CS32AC': 'writing',
+  '23CS32SC': 'speaking',
 };
 
 const shortTitleMap: Record<string, string> = {
@@ -149,7 +150,8 @@ const shortTitleMap: Record<string, string> = {
     '23CS32P1': 'ML Lab',
     '23CS32T3': 'CNS',
     '23CS32P2': 'CNS Lab',
-    '23CS32T2': 'Cloud',
+    '23CS32T2': 'CC',
+    '23CS32E2': 'CS',
     '23CS32AC': 'TRW & IPR',
     '23CS32SC': 'Soft Skills'
 };
