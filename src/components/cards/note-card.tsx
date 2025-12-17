@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Note, Subject } from '@/lib/types';
-import { cn } from '@/lib/utils';
+import { cn, getAssetPath } from '@/lib/utils';
 import { FileText, Link2, FileType, Download } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -43,6 +43,7 @@ const subjectColorClasses: Record<string, string> = {
 export function NoteCard({ note, subject }: NoteCardProps) {
   const config = noteTypeConfig[note.type];
   const isPdf = note.type === 'PDF';
+  const assetUrl = getAssetPath(note.url);
 
   const CardContent = () => (
     <div className="group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
@@ -64,7 +65,7 @@ export function NoteCard({ note, subject }: NoteCardProps) {
     )}
     {isPdf && (
        <Button asChild size="sm" className="mt-4 w-full">
-         <a href={note.url} download>
+         <a href={assetUrl} download>
            <Download className="mr-2 h-4 w-4" />
            Download
          </a>
@@ -77,7 +78,7 @@ export function NoteCard({ note, subject }: NoteCardProps) {
     <CardContent />
   ) : (
     <a
-      href={note.url}
+      href={note.url.startsWith('http') ? note.url : assetUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="h-full"

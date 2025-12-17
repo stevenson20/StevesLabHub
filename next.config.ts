@@ -7,11 +7,12 @@ const withPWA = withPWAInit({
 });
 
 const isProd = process.env.NODE_ENV === 'production';
+const assetPrefix = isProd ? '/StevesLabHub' : '';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: isProd ? '/StevesLabHub' : '',
-  assetPrefix: isProd ? '/StevesLabHub/' : '',
+  basePath: assetPrefix,
+  assetPrefix: assetPrefix,
   typescript: {
     ignoreBuildErrors: true,
   },

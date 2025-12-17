@@ -1,5 +1,5 @@
 import type { Syllabus, Subject } from '@/lib/types';
-import { cn } from '@/lib/utils';
+import { cn, getAssetPath } from '@/lib/utils';
 import { FileText, Download } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -25,7 +25,8 @@ const subjectColorClasses: Record<string, string> = {
   };
 
 export function SyllabusCard({ syllabus, subject }: SyllabusCardProps) {
-  
+  const assetUrl = getAssetPath(syllabus.url);
+
   return (
     <div className="group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
     <div className="flex items-start justify-between">
@@ -45,7 +46,7 @@ export function SyllabusCard({ syllabus, subject }: SyllabusCardProps) {
       </Badge>
     )}
      <Button asChild size="sm" className="mt-4 w-full">
-       <a href={syllabus.url} download>
+       <a href={assetUrl} download>
          <Download className="mr-2 h-4 w-4" />
          Download
        </a>

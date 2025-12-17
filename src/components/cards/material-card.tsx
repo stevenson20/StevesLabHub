@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { getAssetPath } from '@/lib/utils';
+import Link from 'next/link';
 
 type MaterialCardProps = {
   material: Material;
@@ -47,6 +49,7 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
 
   const config = fileTypeConfig[material.type as keyof typeof fileTypeConfig] || fileTypeConfig.Document;
   const canBeViewed = material.fileType === 'PDF' || material.fileType === 'Image';
+  const assetUrl = getAssetPath(material.url);
 
   const handleAction = () => {
     if (canBeViewed) {
@@ -80,7 +83,7 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
              </Button>
         ) : (
             <Button asChild size="sm" className="mt-4 w-full">
-                <a href={material.url} download={material.fileType !== 'Link'} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer">
+                <a href={assetUrl} download={material.fileType !== 'Link'} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     {material.fileType === 'Link' ? 'Open Link' : 'Download'}
                 </a>
@@ -105,14 +108,14 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
             <div className="flex-1 overflow-auto">
               {material.fileType === 'PDF' ? (
                  <iframe
-                    src={material.url}
+                    src={assetUrl}
                     title={material.title}
                     className="h-full w-full border-0"
                   />
               ) : material.fileType === 'Image' ? (
                 <div className="flex items-center justify-center h-full p-4">
                   <img
-                    src={material.url}
+                    src={assetUrl}
                     alt={material.title}
                     className="max-h-full max-w-full object-contain"
                   />
