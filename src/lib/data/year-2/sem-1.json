@@ -1,0 +1,77 @@
+
+{
+    "subjects": [
+        {
+            "id": "23A35105",
+            "name": "Discrete Mathematics & Graph Theory",
+            "short": "Introduce the concepts of mathematical logic and gain knowledge in sets, relations and functions.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A35401a",
+            "name": "Managerial Economics and Financial Analysis",
+            "short": "To inculcate the basic knowledge of microeconomics and financial accounting.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30503",
+            "name": "Digital Logic and Computer Organization",
+            "short": "Comprehensive understanding of digital logic design principles and computer organization fundamentals.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30504",
+            "name": "Advanced Data Structures & Algorithms Analysis",
+            "short": "Provide knowledge on advance data structures and algorithm design techniques.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30505",
+            "name": "Object-Oriented Programming Through JAVA",
+            "short": "Learn the fundamentals of object-oriented programming in Java.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30506",
+            "name": "Advanced Data Structures and Algorithms Analysis Lab",
+            "short": "Acquire practical skills in constructing and managing Data structures.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30507",
+            "name": "Object-Oriented Programming Through JAVA Lab",
+            "short": "Practice object-oriented programming in the Java programming language.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 1
+        },
+        {
+            "id": "23A30502",
+            "name": "Python programming (Skill Enhancement Course)",
+            "short": "Introduce core programming concepts of Python programming language.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 1
+        }
+    ]
+}

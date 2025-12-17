@@ -1,0 +1,94 @@
+{
+    "subjects": [
+        {
+            "id": "23A25201",
+            "name": "Engineering Physics",
+            "short": "Bridging the gap between school physics and UG engineering courses.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A25101",
+            "name": "Differential Equations and Vector Calculus",
+            "short": "To enlighten the learners in the concept of differential equations and multivariable calculus.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A22401",
+            "name": "Basic Electrical and Electronics Engineering",
+            "short": "To expose to the field of electrical and electronics engineering laws and principles.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A20302",
+            "name": "Engineering Graphics",
+            "short": "To enable the students with various concepts like dimensioning, conventions and standards related to Engineering Drawing.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A20501",
+            "name": "Data Structures",
+            "short": "To provide the knowledge of basic data structures and their implementations.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A25202",
+            "name": "Engineering Physics Lab",
+            "short": "To understand the concepts of interference, diffraction and their applications.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A20501-it",
+            "name": "IT Work Shop",
+            "short": "To introduce the internal parts of a computer, peripherals, I/O ports, connecting cables.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A22402",
+            "name": "Electrical and Electronics Engineering Workshop",
+            "short": "To impart knowledge on the fundamental laws & theorems of electrical circuits.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A20503",
+            "name": "Data Structures Lab",
+            "short": "To strengthen the ability of the students to identify and apply the suitable data structure for the given real-world problem.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        },
+        {
+            "id": "23A25902",
+            "name": "NSS/NCC/SCOUTS and Guides/ Community Service",
+            "short": "To impart discipline, character, fraternity, teamwork, social consciousness among the students.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 2
+        }
+    ]
+}

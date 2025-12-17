@@ -1,0 +1,77 @@
+
+{
+    "subjects": [
+        {
+            "id": "23A45102",
+            "name": "Probability & Statistics",
+            "short": "Acquire knowledge in finding the analysis of the data quantitatively or categorically.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40501",
+            "name": "Operating Systems",
+            "short": "Understand the basic concepts and principles of operating systems.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40502",
+            "name": "Database Management Systems",
+            "short": "Introduce database management systems and relational model of data.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40503",
+            "name": "Software Engineering",
+            "short": "Introduce Software life cycle models, Software requirements and SRS document.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40504",
+            "name": "Operating Systems Lab",
+            "short": "Provide insights into system calls, file systems, semaphores.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40505",
+            "name": "Database Management Systems Lab",
+            "short": "Populate and query a database using SQL DDL/DML Commands.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A40506",
+            "name": "Full stack development (Skill Enhancement Course)",
+            "short": "Understand the Fundamentals of Web Programming.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 2
+        },
+        {
+            "id": "23A49901",
+            "name": "Design Thinking for Innovation",
+            "short": "Familiarize students with design thinking process as a tool for breakthrough innovation.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 2,
+            "semester": 2
+        }
+    ]
+}

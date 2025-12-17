@@ -1,0 +1,94 @@
+{
+    "subjects": [
+        {
+            "id": "23A15501",
+            "name": "Communicative English",
+            "short": "To facilitate effective Listening, Reading, Speaking and Writing skills.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A15301",
+            "name": "Chemistry",
+            "short": "To familiarize engineering chemistry and its applications.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A15101",
+            "name": "Linear Algebra & Calculus",
+            "short": "Standard concepts and tools at an intermediate to advanced level mathematics.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A11301",
+            "name": "Basic Civil & Mechanical Engineering",
+            "short": "Preliminary concepts of various engineering domains.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A10501",
+            "name": "Introduction to Programming",
+            "short": "Fundamentals of computer programming and problem-solving skills.",
+            "hasLab": false,
+            "isLabOnly": false,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A15502",
+            "name": "Communicative English Lab",
+            "short": "To expose students to learner friendly modes of language learning.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A15302",
+            "name": "Chemistry Lab",
+            "short": "To verify the fundamental concepts with experiments.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A10302",
+            "name": "Engineering Workshop",
+            "short": "To familiarize with wood working, sheet metal operations, fitting and Electrical house wiring skills.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A10502",
+            "name": "Computer Programming Lab",
+            "short": "To give students hands–on experience and train them on the concepts of the C- programming language.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 1
+        },
+        {
+            "id": "23A15901",
+            "name": "Health and wellness, Yoga and sports",
+            "short": "To make the students maintain their mental and physical wellness.",
+            "hasLab": true,
+            "isLabOnly": true,
+            "year": 1,
+            "semester": 1
+        }
+    ]
+}

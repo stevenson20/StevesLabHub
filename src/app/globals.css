@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+    --primary: 172 66% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 220 25% 20%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 172 50% 92%;
+    --accent-foreground: 172 66% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 172 66% 40%;
+    --radius: 0.75rem;
+    --success: 142 70% 45%;
+
+    --subject-ai: 172 66% 40%;
+    --subject-fsd: 262 83% 58%;
+    --subject-cn: 24 95% 53%;
+    --subject-tinkering: 340 75% 55%;
+    --subject-spm: 270 95% 55%;
+    --subject-cyber: 0 95% 55%;
+    --subject-cloud: 210 95% 55%;
+    --subject-ml: 140 95% 45%;
+    --subject-writing: 50 95% 55%;
+    --subject-speaking: 30 95% 55%;
+    --subject-cns: 320 95% 55%;
+    --subject-ws: 239 84% 67%;
+    --subject-sfs: 175 63% 42%;
+
+
+    --code-bg: 220 20% 12%;
+  }
+
+  .dark {
+    --background: 222 30% 8%;
+    --foreground: 210 20% 95%;
+    --card: 222 25% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 222 30% 8%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 172 66% 50%;
+    --primary-foreground: 222 30% 8%;
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 222 20% 16%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 172 40% 18%;
+    --accent-foreground: 172 66% 65%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 20%;
+    --input: 222 20% 20%;
+    --ring: 172 66% 50%;
+    --success: 142 70% 45%;
+
+    --subject-ai: 172 66% 50%;
+    --subject-fsd: 262 83% 68%;
+    --subject-cn: 24 95% 63%;
+    --subject-tinkering: 340 75% 65%;
+    --subject-spm: 270 95% 65%;
+    --subject-cyber: 0 95% 65%;
+    --subject-cloud: 210 95% 65%;
+    --subject-ml: 140 95% 55%;
+    --subject-writing: 50 95% 65%;
+    --subject-speaking: 30 95% 65%;
+    --subject-cns: 320 95% 65%;
+    --subject-ws: 239 84% 77%;
+    --subject-sfs: 175 63% 52%;
+
+    --code-bg: 222 30% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

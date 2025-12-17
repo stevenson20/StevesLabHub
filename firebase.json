@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "steves-labhub",
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

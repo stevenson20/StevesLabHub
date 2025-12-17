@@ -1,0 +1,58 @@
+{
+  "entities": {
+    "program": {
+      "title": "Lab Program",
+      "description": "A single lab program or experiment.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "language": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "aim": { "type": "string" },
+        "code": { "type": "string" },
+        "subjectId": { "type": "string" }
+      },
+      "required": ["title", "language", "aim", "code", "subjectId"]
+    },
+    "subject": {
+      "title": "Subject",
+      "description": "An academic subject or course.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "hasLab": { "type": "boolean" }
+      },
+      "required": ["name", "description", "hasLab"]
+    },
+    "note": {
+      "title": "Note or Link",
+      "description": "A supplementary note, document, or external link.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "type": { "type": "string", "enum": ["PDF", "Link", "Document"] },
+        "subjectId": { "type": "string" }
+      },
+      "required": ["title", "url", "type", "subjectId"]
+    }
+  },
+  "auth": {
+    "providers": []
+  },
+  "firestore": {
+    "/programs/{programId}": {
+      "schema": { "$ref": "#/entities/program" },
+      "description": "Stores individual lab programs."
+    },
+    "/subjects/{subjectId}": {
+      "schema": { "$ref": "#/entities/subject" },
+      "description": "Stores academic subjects."
+    },
+    "/notes/{noteId}": {
+      "schema": { "$ref": "#/entities/note" },
+      "description": "Stores notes and links."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+{
+  "materials": [
+    {
+      "id": "mat-ai-assign-1",
+      "subjectId": "ai-lab",
+      "type": "Assignment",
+      "title": "AI Assignment 1: Search Algorithms",
+      "url": "/materials/ai-assignment-1.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "mat-cn-q-paper-1",
+      "subjectId": "cn-ip-lab",
+      "type": "Question Paper",
+      "title": "Mid Term 1 Question Paper (2023)",
+      "url": "/materials/cn-mid-1-2023.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "mat-trw-syllabus",
+      "subjectId": "23CS32AC",
+      "type": "Notes",
+      "title": "TRW & IPR Syllabus",
+      "url": "/materials/trw-ipr-syllabus.png",
+      "fileType": "Image"
+    }
+  ]
+}
