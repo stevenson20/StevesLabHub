@@ -24,6 +24,110 @@
       "title": "DW&M (R23) Model Paper (2025–26)",
       "url": "/materials/dwm-model-paper-r23.pdf",
       "fileType": "PDF"
+    },
+    {
+      "id": "note-tinker-manual",
+      "subjectId": "23ES31P1",
+      "type": "Notes",
+      "title": "Tinkercad Lab Manual (Complete)",
+      "url": "/materials/tinkercad-lab-manual.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "note-tinker-sim-temp",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Temp & Humidity Monitor Simulation",
+      "url": "https://www.tinkercad.com/things/jCoseKCUo3i-20-dht11-temperature-and-humidity-sensor",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-water",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Water Level Alert System Simulation",
+      "url": "https://www.tinkercad.com/things/9DZbcf79kT8-",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-plant",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Automatic Plant Watering Simulation",
+      "url": "https://www.tinkercad.com/things/2cTfQT7fAno-automated-plant-watering-system",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-door",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Door Lock System Simulation",
+      "url": "https://www.tinkercad.com/things/cMDBAUzuXqA-door-lock",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-dustbin",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Smart Dustbin Simulation",
+      "url": "https://www.tinkercad.com/embed/kxwoGlM7BNY?editbtn=1",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-fire",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Fire Detection System Simulation",
+      "url": "https://www.tinkercad.com/things/2X0n2iTvhY2-fire-alarm-system",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-soil",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Soil Moisture Irrigation Simulation",
+      "url": "https://www.tinkercad.com/things/eKtHRRkOZoA-",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-helmet",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Smart Helmet Simulation",
+      "url": "https://www.tinkercad.com/things/h7qvsrFRx9G-accident-prevention-and-detection",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-reactor",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "Temp Controlled Reactor Simulation",
+      "url": "https://www.tinkercad.com/things/fndGND1saJ4-automatic-room-temperature-controller",
+      "fileType": "Link"
+    },
+    {
+      "id": "note-tinker-sim-ecg",
+      "subjectId": "23ES31P1",
+      "type": "Link",
+      "title": "ECG Signal Acquisition Simulation",
+      "url": "https://www.tinkercad.com/things/hbXyygH4jbr-portable-electrocardiograph-ecg",
+      "fileType": "Link"
+    },
+    {
+      "id": "syllabus-ai",
+      "subjectId": "23CS31P1",
+      "type": "Syllabus",
+      "title": "AI Lab Syllabus",
+      "url": "/syllabi/ai-lab-syllabus.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "syllabus-cs",
+      "subjectId": "23CS32E2",
+      "type": "Syllabus",
+      "title": "Cyber Security Syllabus",
+      "url": "/syllabi/cyber-security-syllabus.pdf",
+      "fileType": "PDF"
     }
   ]
 }

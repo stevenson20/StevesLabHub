@@ -3,10 +3,10 @@ import type { Subject, Program, Note, Syllabus, Material } from './types';
 
 // Import all data from the new structure
 // Note: These imports are now minimal and only load the subjects list for each semester.
-import y1s1 from './data/year-1/sem-1.json';
-import y1s2 from './data/year-1/sem-2.json';
-import y2s1 from './data/year-2/sem-1.json';
-import y2s2 from './data/year-2/sem-2.json';
+import y1s1_data from './data/year-1/sem-1.json';
+import y1s2_data from './data/year-1/sem-2.json';
+import y2s1_data from './data/year-2/sem-1.json';
+import y2s2_data from './data/year-2/sem-2.json';
 
 // Year 3, Semester 1
 import y3s1_cs31t1_sub from './data/year-3/sem-1/23CS31T1/subject.json';
@@ -36,15 +36,14 @@ import y3s2_cs32e2_sub from './data/year-3/sem-2/23CS32E2/subject.json';
 
 
 // Legacy files (only for notes and syllabi for now)
-import programsData from './programs.json';
 import materialsData from './materials.json';
 
 
-const allSemesterData = [
-  { year: 1, semester: 1, data: y1s1.subjects },
-  { year: 1, semester: 2, data: y1s2.subjects },
-  { year: 2, semester: 1, data: y2s1.subjects },
-  { year: 2, semester: 2, data: y2s2.subjects },
+const allSemesterSubjects = [
+  { year: 1, semester: 1, data: y1s1_data.subjects },
+  { year: 1, semester: 2, data: y1s2_data.subjects },
+  { year: 2, semester: 1, data: y2s1_data.subjects },
+  { year: 2, semester: 2, data: y2s2_data.subjects },
   { year: 3, semester: 1, data: [y3s1_cs31t1_sub, y3s1_cs31t2_sub, y3s1_cs31t3_sub, y3s1_cs31e4_sub, y3s1_cs31p1_sub, y3s1_cs31p2_sub, y3s1_ad31sc_sub, y3s1_es31p1_sub, y3s1_es31t1_sub] },
   { year: 3, semester: 2, data: [y3s2_cs32ac_sub, y3s2_cs32p1_sub, y3s2_cs32p2_sub, y3s2_cs32sc_sub, y3s2_cs32t1_sub, y3s2_cs32t2_sub, y3s2_cs32t3_sub, y3s2_cs32e2_sub] },
 ];
@@ -72,11 +71,9 @@ const shortTitleMap: Record<string, string> = {
 
 const finalSubjects: Subject[] = [];
 const finalPrograms: Program[] = [];
-const finalNotes: Note[] = [];
-const finalSyllabi: Syllabus[] = [];
 const finalMaterials: Material[] = [];
 
-allSemesterData.forEach(sem => {
+allSemesterSubjects.forEach(sem => {
     (sem.data as any[]).forEach(s => {
         const subject: Subject = {
             id: s.id,
@@ -101,7 +98,7 @@ allProgramsData.forEach(p => {
             ...p,
             canRunInBrowser: p.language.toLowerCase() === 'html/css/js',
             aim: p.problem,
-            code: (p as any).code || "No code available", // Fallback for missing code
+            code: (p as any).code || "No code available",
             year: matchingSubject.year,
             semester: matchingSubject.semester,
         } as Program);
@@ -111,36 +108,13 @@ allProgramsData.forEach(p => {
 materialsData.materials.forEach(m => {
     const matchingSubject = finalSubjects.find(s => s.id === m.subjectId);
     if (matchingSubject) {
+        const materialType = m.type === 'Syllabus' ? m.type : ('fileType' in m && m.fileType === 'Link' ? 'Link' : m.type);
         finalMaterials.push({
             ...m,
+            type: materialType,
             year: matchingSubject.year,
             semester: matchingSubject.semester,
         } as Material);
-    }
-});
-
-// Legacy notes and syllabi
-programsData.notes.forEach((n: any) => {
-    const matchingSubject = finalSubjects.find(s => s.shortTitle.toLowerCase() === n.subject.toLowerCase() || s.title.toLowerCase().includes(n.subject.toLowerCase()));
-    if (matchingSubject) {
-        finalNotes.push({
-            ...n,
-            id: `note-${n.title.replace(/\s+/g, '-').toLowerCase()}`,
-            subjectId: matchingSubject.id,
-            year: matchingSubject.year,
-            semester: matchingSubject.semester,
-        } as Note);
-    }
-});
-
-programsData.syllabi.forEach((s: any) => {
-    const matchingSubject = finalSubjects.find(subj => subj.id === s.subjectId);
-    if (matchingSubject) {
-        finalSyllabi.push({
-            ...s,
-            year: matchingSubject.year,
-            semester: matchingSubject.semester,
-        } as Syllabus);
     }
 });
 
@@ -148,5 +122,5 @@ programsData.syllabi.forEach((s: any) => {
 export const subjects: Subject[] = finalSubjects;
 export const programs: Program[] = finalPrograms;
 export const materials: Material[] = finalMaterials;
-export const syllabi: Syllabus[] = finalSyllabi;
-export const notes: Note[] = finalNotes;
+export const syllabi: Syllabus[] = finalMaterials.filter(m => m.type === 'Syllabus') as unknown as Syllabus[];
+export const notes: Note[] = finalMaterials.filter(m => m.type !== 'Syllabus') as unknown as Note[];
