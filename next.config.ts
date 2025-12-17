@@ -7,9 +7,6 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/StevesLabHub' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/StevesLabHub/' : '',
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
