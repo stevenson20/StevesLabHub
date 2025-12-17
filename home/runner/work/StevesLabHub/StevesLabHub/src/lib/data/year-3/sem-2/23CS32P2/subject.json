@@ -1,0 +1,8 @@
+
+{
+    "id": "23CS32P2",
+    "name": "Cryptography and Network Security Lab",
+    "short": "Practical implementation of security protocols.",
+    "hasLab": true,
+    "isLabOnly": true
+}

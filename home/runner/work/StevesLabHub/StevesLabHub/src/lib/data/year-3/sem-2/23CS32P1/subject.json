@@ -1,0 +1,8 @@
+
+{
+    "id": "23CS32P1",
+    "name": "Machine Learning Lab",
+    "short": "Implementation of ML models and algorithms.",
+    "hasLab": true,
+    "isLabOnly": true
+}
