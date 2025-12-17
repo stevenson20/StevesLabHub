@@ -10,6 +10,7 @@ export interface Program {
   subjectId: string;
   year: number;
   semester: number;
+  problem: string;
 }
 
 export interface Subject {
@@ -22,6 +23,8 @@ export interface Subject {
   isLabOnly: boolean;
   year: number;
   semester: number;
+  name: string;
+  short?: string;
 }
 
 export interface Note {

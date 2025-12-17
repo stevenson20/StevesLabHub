@@ -66,7 +66,7 @@ const subjectColorMap: Record<string, Subject['color']> = {
 const shortTitleMap: Record<string, string> = {
     '23A15501': 'English', '23A15301': 'Chemistry', '23A15101': 'Maths-I', '23A11301': 'BCME', '23A10501': 'C-Prog', '23A15502': 'Eng Lab', '23A15302': 'Chem Lab', '23A10302': 'Workshop', '23A10502': 'C-Prog Lab', '23A15901': 'Yoga', '23A25201': 'Physics', '23A25101': 'Maths-II', '23A22401': 'BEE', '23A20302': 'Graphics', '23A20501': 'DS', '23A25202': 'Physics Lab', '23A20501-it': 'IT Shop', '23A22402': 'BEE Shop', '23A20503': 'DS Lab', '23A25902': 'NSS/NCC', '23A35105': 'DMGT', '23A35401a': 'MEFA', '23A30503': 'DLCO', '23A30504': 'ADSA', '23A30505': 'JAVA', '23A30506': 'ADSA Lab', '23A30507': 'JAVA Lab', '23A30502': 'Python', '23A45102': 'P&S', '23A40501': 'OS', '23A40502': 'DBMS', '23A40503': 'SE', '23A40504': 'OS Lab', '23A40505': 'DBMS Lab', '23A40506': 'FSD', '23A49901': 'Design',
     '23CS31T1': 'AI', '23CS31P1': 'AI Lab', '23CS31T2': 'CN & IP', '23CS31P2': 'CN & IP Lab', '23CS31T3': 'ATCD', '23CS31E4': 'DMDW', '23AD31SC': 'FSD-II', '23ES31P1': 'Tinkering', '23ES31T1': 'Quantum',
-    '23CS32T1': 'ML', '23CS32P1': 'ML Lab', '23CS32T3': 'CNS', '23CS32P2': 'CNS Lab', '23CS32T2': 'CC', '23CS32E2': 'CS', '23CS32AC': 'TRW & IPR', '23CS32SC': 'Soft Skills'
+    '23CS32AC': 'TRW & IPR', '23CS32P1': 'ML Lab', '23CS32P2': 'CNS Lab', '23CS32SC': 'Soft Skills', '23CS32T1': 'ML', '23CS32T2': 'CC', '23CS32T3': 'CNS', '23CS32E2': 'CS'
 };
 
 const finalSubjects: Subject[] = [];
