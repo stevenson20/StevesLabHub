@@ -21,9 +21,24 @@
       "subjectId": "23CS32AC",
       "type": "Notes",
       "title": "Tinkercad Lab Manual – CSE (DS)",
-      "url": "/public/materials/TINKERCAD LAB MANUAL_CSE(DS)_13_08_25 (1).pdf",
+      "url": "/materials/TINKERCAD%20LAB%20MANUAL_CSE(DS)_13_08_25%20(1).pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "mat-dwm-all-units-assignments",
+      "subjectId": "dw-m",
+      "type": "Assignment",
+      "title": "DW&M All Units Assignment Questions (2025–26) – R23",
+      "url": "/materials/DW%26M%20ALL%20UNITS%20%20ASSIGNMENT%20QUESTIONS(2025-26)%20R23.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "mat-dwm-model-paper",
+      "subjectId": "dw-m",
+      "type": "Question Paper",
+      "title": "DW&M (R23) Model Paper (2025–26)",
+      "url": "/materials/DW%26M(R23)%20MODEL%20PAPER%202025-26.pdf",
       "fileType": "PDF"
     }
   ]
 }
-
