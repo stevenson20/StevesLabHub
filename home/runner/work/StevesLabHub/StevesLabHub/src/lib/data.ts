@@ -2,10 +2,11 @@
 import type { Subject, Program, Note, Syllabus, Material } from './types';
 
 // Import all data from the new structure
-import year1sem1_subjects from './data/year-1/sem-1.json';
-import year1sem2_subjects from './data/year-1/sem-2.json';
-import year2sem1_subjects from './data/year-2/sem-1.json';
-import year2sem2_subjects from './data/year-2/sem-2.json';
+// Note: These imports are now minimal and only load the subjects list for each semester.
+import y1s1 from './data/year-1/sem-1.json';
+import y1s2 from './data/year-1/sem-2.json';
+import y2s1 from './data/year-2/sem-1.json';
+import y2s2 from './data/year-2/sem-2.json';
 
 // Year 3, Semester 1
 import y3s1_cs31t1_sub from './data/year-3/sem-1/23CS31T1/subject.json';
@@ -40,10 +41,10 @@ import materialsData from './materials.json';
 
 
 const allSemesterData = [
-  { year: 1, semester: 1, data: year1sem1_subjects.subjects },
-  { year: 1, semester: 2, data: year1sem2_subjects.subjects },
-  { year: 2, semester: 1, data: year2sem1_subjects.subjects },
-  { year: 2, semester: 2, data: year2sem2_subjects.subjects },
+  { year: 1, semester: 1, data: y1s1.subjects },
+  { year: 1, semester: 2, data: y1s2.subjects },
+  { year: 2, semester: 1, data: y2s1.subjects },
+  { year: 2, semester: 2, data: y2s2.subjects },
   { year: 3, semester: 1, data: [y3s1_cs31t1_sub, y3s1_cs31t2_sub, y3s1_cs31t3_sub, y3s1_cs31e4_sub, y3s1_cs31p1_sub, y3s1_cs31p2_sub, y3s1_ad31sc_sub, y3s1_es31p1_sub, y3s1_es31t1_sub] },
   { year: 3, semester: 2, data: [y3s2_cs32ac_sub, y3s2_cs32p1_sub, y3s2_cs32p2_sub, y3s2_cs32sc_sub, y3s2_cs32t1_sub, y3s2_cs32t2_sub, y3s2_cs32t3_sub, y3s2_cs32e2_sub] },
 ];
