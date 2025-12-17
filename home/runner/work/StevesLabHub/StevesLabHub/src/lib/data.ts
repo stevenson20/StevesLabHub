@@ -157,7 +157,7 @@ const shortTitleMap: Record<string, string> = {
 };
 
 
-const combinedSubjectsRaw = [...allYearSubjects, ...programsData.subjects];
+const combinedSubjectsRaw = [...allYearSubjects];
 const subjectMap = new Map<string, Subject>();
 
 combinedSubjectsRaw.forEach(s => {
@@ -179,9 +179,8 @@ combinedSubjectsRaw.forEach(s => {
 
 export const subjects: Subject[] = Array.from(subjectMap.values());
 
-export const programs: Program[] = programsData.subjects.flatMap(subject => 
-  (subject.programs || []).map(p => {
-      const sub = subjectMap.get(subject.id);
+export const programs: Program[] = programsData.programs.map(p => {
+      const sub = subjectMap.get(p.subjectId);
       return {
         id: p.id,
         title: p.title,
@@ -190,12 +189,11 @@ export const programs: Program[] = programsData.subjects.flatMap(subject =>
         aim: p.problem,
         code: p.code,
         canRunInBrowser: p.language.toLowerCase() === 'html/css/js',
-        subjectId: subject.id,
-        year: sub?.year || 4,
-        semester: sub?.semester || 1,
+        subjectId: p.subjectId,
+        year: sub?.year || 0,
+        semester: sub?.semester || 0,
       };
-  })
-);
+  });
 
 let noteIdCounter = 1;
 export const notes: Note[] = (programsData.notes || []).map(n => {
