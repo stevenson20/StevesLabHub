@@ -1,4 +1,3 @@
-
 import type { Subject, Program, Material } from './types';
 import materialsData from './materials.json';
 
@@ -51,7 +50,7 @@ import y3s2_23CS32T3_prog from './data/year-3/sem-2/23CS32T3/programs.json';
 import y3s2_23CS32E2_sub from './data/year-3/sem-2/23CS32E2/subject.json';
 import y3s2_23CS32E2_prog from './data/year-3/sem-2/23CS32E2/programs.json';
 
-const allSubjectsData: { subject: Subject; programs: Program[] }[] = [
+const allSubjectsData: { subject: Subject; programs: Omit<Program, 'subjectId' | 'year' | 'semester'>[] }[] = [
     // --- Year 3, Semester 1 ---
     { subject: y3s1_23AD31SC_sub, programs: y3s1_23AD31SC_prog },
     { subject: y3s1_23CS31E1_sub, programs: y3s1_23CS31E1_prog },
@@ -80,7 +79,7 @@ const allSubjectsData: { subject: Subject; programs: Program[] }[] = [
 
 const subjectColorMap: Record<string, Subject['color']> = {
     '23AD31SC': 'fsd', '23CS31P1': 'ai', '23CS31P2': 'cn', '23ES31P1': 'tinkering',
-    '23CS31T1': 'ai', '23CS31T2': 'cn', '23CS31T3': 'fsd', '23CS31E4': 'spm', '23ES31T1': 'ai',
+    '23CS31T1': 'ai', '23CS31T2': 'cn', '23CS31T3': 'default', '23CS31E4': 'spm', '23ES31T1': 'default',
     '23CS32AC': 'writing', '23CS32P1': 'ml', '23CS32P2': 'cns', '23CS32SC': 'speaking',
     '23CS32T1': 'ml', '23CS32T2': 'cloud', '23CS32T3': 'cns', '23CS32E2': 'cyber',
     '23CS31E1': 'default', '23CS31E2': 'default', '23CS31E3': 'default', 
@@ -138,7 +137,3 @@ export const materials: Material[] = materialsData.materials.map((m: any) => {
         semester: sub?.semester ?? 0,
     };
 }).filter((m: any) => m.year !== 0);
-
-
-export const notes: Note[] = [];
-export const syllabi: Syllabus[] = [];

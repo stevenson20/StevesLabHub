@@ -1,19 +1,17 @@
-
 "use client"
 
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { SubjectsSection } from '@/components/sections/subjects-section';
 import { AllProgramsSection } from '@/components/sections/all-programs-section';
 import { NotesSection } from '@/components/sections/notes-section';
 import { SyllabusSection } from '@/components/sections/syllabus-section';
 import { materials, programs, subjects } from '@/lib/data';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 export function DashboardClient() {
   const searchParams = useSearchParams();
-  const router = useRouter();
 
   const [activeYear, setActiveYear] = useState(searchParams.get('year') || '3');
   const [activeSem, setActiveSem] = useState(searchParams.get('sem') || '1');
@@ -30,14 +28,8 @@ export function DashboardClient() {
 
     return {
       subjects: subjects.filter(s => s.year === year && s.semester === sem),
-      programs: programs.filter(p => {
-        const subject = subjects.find(s => s.id === p.subjectId);
-        return subject && subject.year === year && subject.semester === sem;
-      }),
-      materials: materials.filter(m => {
-        const subject = subjects.find(s => s.id === m.subjectId);
-        return subject && subject.year === year && subject.semester === sem;
-      }),
+      programs: programs.filter(p => p.year === year && p.semester === sem),
+      materials: materials.filter(m => m.year === year && m.semester === sem),
     };
   }, [activeYear, activeSem]);
 
@@ -69,7 +61,7 @@ export function DashboardClient() {
       <SubjectsSection subjects={filteredData.subjects} programs={filteredData.programs} />
       <SyllabusSection syllabi={syllabi} subjects={filteredData.subjects} />
       <AllProgramsSection programs={filteredData.programs} subjects={filteredData.subjects} />
-      <NotesSection notes={notes} subjects={filteredData.subjects} />
+      <NotesSection materials={notes} subjects={filteredData.subjects} />
     </div>
   );
 }

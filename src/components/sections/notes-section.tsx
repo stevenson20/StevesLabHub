@@ -1,33 +1,33 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import type { Note, Subject } from '@/lib/types';
-import { NoteCard } from '@/components/cards/note-card';
+import type { Material, Subject } from '@/lib/types';
+import { MaterialCard } from '@/components/cards/material-card';
 import { Skeleton } from '@/components/ui/skeleton';
 
-interface NotesSectionProps {
-    notes: Note[];
+interface StudyMaterialsSectionProps {
+    materials: Material[];
     subjects: Subject[];
 }
 
-export function NotesSection({ notes, subjects }: NotesSectionProps) {
+export function NotesSection({ materials, subjects }: StudyMaterialsSectionProps) {
     const [loading, setLoading] = useState(true);
 
     const subjectMap = new Map(subjects.map(s => [s.id, s]));
 
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setLoading(false);
         }, 300);
-    }, [notes]);
+        return () => clearTimeout(timer);
+    }, [materials]);
 
     return (
-        <section id="notes" className="py-12 bg-muted/30">
+        <section id="study-materials" className="py-12 bg-muted/30">
             <div className="container">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Notes & Links</h2>
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Study Materials & Links</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Quick access to important documents, cheat sheets, and external resources.
                     </p>
@@ -38,14 +38,14 @@ export function NotesSection({ notes, subjects }: NotesSectionProps) {
                            <Skeleton key={i} className="h-[220px] w-full rounded-xl" />
                         ))}
                     </div>
-                ) : notes.length > 0 ? (
+                ) : materials.length > 0 ? (
                     <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-3 animate-fade-in">
-                        {notes.map(note => (
-                            <NoteCard key={note.id} note={note} subject={subjectMap.get(note.subjectId)} />
+                        {materials.map(material => (
+                            <MaterialCard key={material.id} material={material} subject={subjectMap.get(material.subjectId)} />
                         ))}
                     </div>
                 ) : (
-                    <p className="text-center text-muted-foreground">No notes or links for this semester.</p>
+                    <p className="text-center text-muted-foreground">No materials or links for this semester.</p>
                 )}
             </div>
         </section>
