@@ -59,51 +59,51 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
     }
   };
 
-  const CardUI = (
-      <div className="group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-        <div className="flex items-start justify-between">
-          <div className={cn("flex h-12 w-12 items-center justify-center rounded-lg", config.color)}>
-            {config.icon}
-          </div>
-          <Badge variant="outline" className="rounded-full">{material.type}</Badge>
+  const content = (
+    <div className="group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+      <div className="flex items-start justify-between">
+        <div className={cn("flex h-12 w-12 items-center justify-center rounded-lg", config.color)}>
+          {config.icon}
         </div>
-        <h3 className="mt-4 font-semibold text-foreground group-hover:text-primary transition-colors flex-grow">
-          {material.title}
-        </h3>
-        {subject && (
-          <Badge
-            className={cn("mt-2 font-medium w-fit", subjectColorClasses[subject.color || 'default'])}
-          >
-            {subject.shortTitle}
-          </Badge>
-        )}
-        <div className="flex-grow" />
-        
-        {canBeViewed ? (
-             <Button onClick={handleAction} size="sm" className="mt-4 w-full z-10">
-                View
-             </Button>
-        ) : (
-            <Button asChild size="sm" className="mt-4 w-full z-10">
-                <a href={assetUrl} download={material.fileType !== 'Link'} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer">
-                    <Download className="mr-2 h-4 w-4" />
-                    {material.fileType === 'Link' ? 'Open Link' : 'Download'}
-                </a>
-            </Button>
-        )}
+        <Badge variant="outline" className="rounded-full">{material.type}</Badge>
       </div>
+      <h3 className="mt-4 font-semibold text-foreground group-hover:text-primary transition-colors flex-grow">
+        {material.title}
+      </h3>
+      {subject && (
+        <Badge
+          className={cn("mt-2 font-medium w-fit", subjectColorClasses[subject.color || 'default'])}
+        >
+          {subject.shortTitle}
+        </Badge>
+      )}
+      <div className="flex-grow" />
+      
+      {canBeViewed ? (
+           <Button onClick={handleAction} size="sm" className="mt-4 w-full z-10">
+              View
+           </Button>
+      ) : (
+          <Button asChild size="sm" className="mt-4 w-full z-10">
+              <a href={assetUrl} download={material.fileType !== 'Link'} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer">
+                  <Download className="mr-2 h-4 w-4" />
+                  {material.fileType === 'Link' ? 'Open Link' : 'Download'}
+              </a>
+          </Button>
+      )}
+    </div>
   );
-
-  const Wrapper = canBeViewed ? 'div' : Link;
-  const wrapperProps = canBeViewed 
-    ? { className: "h-full", onClick: handleAction, style:{cursor: 'pointer'} } 
-    : { href: assetUrl, target: "_blank", rel: "noopener noreferrer", className: "h-full" };
 
   return (
     <>
-      <Wrapper {...wrapperProps}>
-        {CardUI}
-      </Wrapper>
+      <div onClick={canBeViewed ? handleAction : undefined} className={cn("h-full", canBeViewed && "cursor-pointer")}>
+        {canBeViewed ? content : (
+            <Link href={assetUrl} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer" className="h-full block">
+              {content}
+            </Link>
+        )}
+      </div>
+
       {canBeViewed && (
         <Dialog open={isViewerOpen} onOpenChange={setIsViewerOpen}>
           <DialogContent className="max-w-5xl h-[90vh] p-0 animate-scale-in flex flex-col">

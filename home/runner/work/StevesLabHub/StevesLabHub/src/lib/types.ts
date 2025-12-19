@@ -27,28 +27,6 @@ export interface Subject {
   short?: string;
 }
 
-export interface Note {
-  id: string;
-  title: string;
-  subjectId: string;
-  type: 'PDF' | 'Link' | 'Document' | 'Notes' | 'Assignment' | 'Question Paper' | 'Image';
-  url: string;
-  year: number;
-  semester: number;
-  fileType: 'PDF' | 'Image' | 'Link' | 'Document';
-}
-
-export interface Syllabus {
-  id: string;
-  title: string;
-  subjectId: string;
-  type: 'PDF' | 'Link' | 'Syllabus';
-  url: string;
-  year: number;
-  semester: number;
-  fileType: 'PDF' | 'Image' | 'Link' | 'Document';
-}
-
 export interface Material {
   id: string;
   subjectId: string;
