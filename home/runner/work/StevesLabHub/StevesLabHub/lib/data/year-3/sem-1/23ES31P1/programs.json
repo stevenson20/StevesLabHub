@@ -1,0 +1,83 @@
+
+[
+    {
+        "id": "tinker-4",
+        "title": "4. Temp & Humidity Monitor",
+        "problem": "To create a temperature and humidity monitoring system using an Arduino, a DHT11 sensor, and an LCD display within the Tinkercad environment.",
+        "language": "cpp",
+        "tags": ["Arduino", "Sensors", "LCD", "IoT"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-5",
+        "title": "5. Water Level Indicator",
+        "problem": "To create a virtual water level indicator using an ultrasonic sensor and LCDs for a 600 Litre Water Tank.",
+        "language": "cpp",
+        "tags": ["Arduino", "Ultrasonic", "LCD"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-6",
+        "title": "6. Auto Plant Watering",
+        "problem": "To design an automatic plant watering system controlled by a temperature sensor. The system activates the pump when thresholds are exceeded.",
+        "language": "cpp",
+        "tags": ["Arduino", "Automation", "Agriculture"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-7",
+        "title": "7. Door Lock System",
+        "problem": "To design and simulate an Arduino-based door lock system using a Keypad and Servo motor.",
+        "language": "cpp",
+        "tags": ["Arduino", "Security", "Servo", "Keypad"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-8",
+        "title": "8. Smart Dustbin",
+        "problem": "To design a basic Arduino Smart Dustbin circuit in Tinkercad, focusing on automatic lid opening.",
+        "language": "cpp",
+        "tags": ["Arduino", "Servo", "Ultrasonic", "Automation"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-9",
+        "title": "9. Fire Detection System",
+        "problem": "To create a fire detection and alarm system in Tinkercad using an Arduino.",
+        "language": "cpp",
+        "tags": ["Arduino", "Safety", "Alarm", "Sensors"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-10",
+        "title": "10 .Smart Irrigation",
+        "problem": "To simulate and design a smart irrigation system using Arduino with temp, light and moisture sensors.",
+        "language": "cpp",
+        "tags": ["Arduino", "IoT", "Agriculture", "Sensors"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-11",
+        "title": "11. Smart Helmet",
+        "problem": "To design a smart helmet for accident detection, gas leak detection, and high temp alerts.",
+        "language": "cpp",
+        "tags": ["Arduino", "Safety", "Wearable", "Sensors"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-12",
+        "title": "12. Room Temp Controller",
+        "problem": "To design and simulate an automatic room temperature controller system in Chemical Reactor using Arduino.",
+        "language": "cpp",
+        "tags": ["Arduino", "Control System", "Automation"],
+        "code": "// Your C++ code here"
+    },
+    {
+        "id": "tinker-13",
+        "title": "13. Portable ECG",
+        "problem": "To design and simulate a basic portable ECG circuit using the Tinkercad platform.",
+        "language": "cpp",
+        "tags": ["Arduino", "Biomedical", "ECG", "Simulation"],
+        "code": "// Your C++ code here"
+    }
+]

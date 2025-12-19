@@ -1,0 +1,99 @@
+
+[
+    {
+        "id": "ai-p1-bfs",
+        "title": "Program 1: Breadth First Search (BFS)",
+        "language": "Python",
+        "tags": ["bfs", "graph", "search"],
+        "problem": "Aim: Write a Program to Implement Breadth First Search using Python.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p2-best-first",
+        "title": "Program 2: Best First Search",
+        "language": "Python",
+        "tags": ["best-first", "heuristic", "graph"],
+        "problem": "Aim: Write a program to implement Best First Searching Algorithm.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p3-dfs",
+        "title": "Program 3: Depth First Search (DFS)",
+        "language": "Python",
+        "tags": ["dfs", "graph", "search"],
+        "problem": "Aim: Write a Program to Implement Depth First Search using Python.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p4-heuristic-search",
+        "title": "Program 4: Heuristic (Hill Climbing) Search",
+        "language": "Python",
+        "tags": ["heuristic", "hill-climbing", "search"],
+        "problem": "Aim: Write a program to implement the Heuristic Search using hill climbing.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p5-astar-ao",
+        "title": "Program 5: A* and AO* Algorithms",
+        "language": "Python",
+        "tags": ["a*", "ao*", "heuristic", "graph"],
+        "problem": "Aim: Write a python program to implement A* and AO* algorithm to find the shortest path.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p6-water-jug",
+        "title": "Program 6: Water Jug Problem",
+        "language": "Python",
+        "tags": ["water-jug", "state-space", "search"],
+        "problem": "Aim: Write a Program to Implement Water-Jug problem using Python.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p7-alpha-beta",
+        "title": "Program 7: Alpha-Beta Pruning",
+        "language": "Python",
+        "tags": ["alpha-beta", "minimax", "game-tree"],
+        "problem": "Aim: Write a Program to Implement Alpha-Beta Pruning using Python.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p8-8queens",
+        "title": "Program 8: 8-Queens Problem",
+        "language": "Python",
+        "tags": ["8-queens", "backtracking"],
+        "problem": "Aim: Write a Program to implement 8-Queens Problem using Python.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p9-default-meeting",
+        "title": "Program 9: Meeting Scheduling with Default Reasoning",
+        "language": "Python",
+        "tags": ["default-reasoning", "scheduling"],
+        "problem": "Aim: Write a program to schedule a meeting among 5 busy people using Default Reasoning so that the output gives the time, place and day of the meeting.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p10-unification",
+        "title": "Program 10: Unification Algorithm",
+        "language": "Python",
+        "tags": ["unification", "logic"],
+        "problem": "Aim: Write a program to implement the Unification algorithm.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p11-kb-system",
+        "title": "Program 11: Simple Knowledge Base System",
+        "language": "Python",
+        "tags": ["knowledge-base", "rules", "inference"],
+        "problem": "Aim: Develop a knowledge base system consisting of facts and rules about some specialized knowledge domain.",
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "ai-p12-8puzzle",
+        "title": "Program 12: 8-Puzzle Using Different Heuristics",
+        "language": "Python",
+        "tags": ["8-puzzle", "a*", "heuristic"],
+        "problem": "Aim: Write a program to implement 8 puzzle problem using different heuristics.",
+        "code": "# Your Python code here"
+    }
+]

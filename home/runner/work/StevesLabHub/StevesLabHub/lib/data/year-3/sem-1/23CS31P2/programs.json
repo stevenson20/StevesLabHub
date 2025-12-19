@@ -1,0 +1,75 @@
+
+[
+    {
+        "id": "cn-1",
+        "title": "1. Framing Methods",
+        "problem": "Implement the data link layer framing methods: character count, character stuffing, and bit stuffing.",
+        "language": "python",
+        "tags": ["Framing", "Data Link"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-2",
+        "title": "2. CRC Computation",
+        "problem": "Write a program to compute CRC code for CRC-12, CRC-16 and CRC-CCITT.",
+        "language": "python",
+        "tags": ["CRC", "Error Detection"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-3",
+        "title": "3. Sliding Window (Go-Back-N)",
+        "problem": "Implement flow control using the sliding window protocol (Go-Back-N).",
+        "language": "python",
+        "tags": ["Flow Control", "Sliding Window"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-4",
+        "title": "4. Dijkstra’s Algorithm",
+        "problem": "Implement Dijkstra’s algorithm to compute the shortest path through a network.",
+        "language": "python",
+        "tags": ["Routing", "Dijkstra"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-5",
+        "title": "5. Broadcast Tree",
+        "problem": "Obtain a broadcast tree for a subnet of hosts.",
+        "language": "python",
+        "tags": ["Subnet", "Broadcast"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-6",
+        "title": "6. Distance Vector Routing",
+        "problem": "Implement distance vector routing algorithm for obtaining routing tables.",
+        "language": "python",
+        "tags": ["Routing", "DVR"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-7",
+        "title": "7. Data Encryption",
+        "problem": "Implement data encryption and decryption (Caesar Cipher).",
+        "language": "python",
+        "tags": ["Security", "Encryption"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-8",
+        "title": "8. Leaky Bucket",
+        "problem": "Write a program for congestion control using Leaky bucket algorithm.",
+        "language": "python",
+        "tags": ["Congestion Control", "Leaky Bucket"],
+        "code": "# Your Python code here"
+    },
+    {
+        "id": "cn-9",
+        "title": "9. Frame Sorting",
+        "problem": "Write a program for frame sorting technique used in buffers.",
+        "language": "python",
+        "tags": ["Buffering", "Sorting"],
+        "code": "# Your Python code here"
+    }
+]

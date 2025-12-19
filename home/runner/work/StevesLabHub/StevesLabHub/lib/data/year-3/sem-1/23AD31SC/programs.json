@@ -1,0 +1,83 @@
+
+[
+    {
+        "id": "fsd-p1-math-tool",
+        "title": "Program 1: Simple Math Tool",
+        "language": "HTML/CSS/JS",
+        "tags": ["calculator", "arithmetic", "basic-js"],
+        "problem": "Aim: To design and develop a simple web application that performs basic arithmetic and number checks.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p2-js-number-calculator",
+        "title": "Program 2: JS Number Calculator",
+        "language": "HTML/CSS/JS",
+        "tags": ["calculator", "js-functions"],
+        "problem": "Aim: To design a number-based calculator in JS using functions.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p3-dell-availability",
+        "title": "Program 3: Check Product Availability (Dell Store)",
+        "language": "HTML/CSS/JS",
+        "tags": ["inventory", "search"],
+        "problem": "Aim: To check availability of a Dell product using JS arrays.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p4-dell-add-product",
+        "title": "Program 4: Add Product to Inventory",
+        "language": "HTML/CSS/JS",
+        "tags": ["inventory", "array-push"],
+        "problem": "Aim: To add a new product to Dell inventory using JS arrays.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p5-dell-remove-product",
+        "title": "Program 5: Remove Product from Inventory",
+        "language": "HTML/CSS/JS",
+        "tags": ["inventory", "remove"],
+        "problem": "Aim: To remove a product from Dell inventory using JS arrays.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p6-dell-inventory-objects",
+        "title": "Program 6: Inventory System Using Objects",
+        "language": "HTML/CSS/JS",
+        "tags": ["objects", "inventory"],
+        "problem": "Aim: To manage Dell inventory using JS objects.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p7-weather-report",
+        "title": "Program 7: Weather Report Application",
+        "language": "HTML/CSS/JS",
+        "tags": ["weather", "search"],
+        "problem": "Aim: To design a weather report application using JS objects.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p8-travel-advisory",
+        "title": "Program 8: Travel Advisory Application",
+        "language": "HTML/CSS/JS",
+        "tags": ["advisory", "weather"],
+        "problem": "Aim: To develop a weather-based travel advisory system.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p9-smart-nbkrist-enrollment",
+        "title": "Program 9: SMART NBKRIST Course Enrollment",
+        "language": "HTML/CSS/JS",
+        "tags": ["forms", "validation"],
+        "problem": "Aim: To develop a student enrollment form with JS validation.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    },
+    {
+        "id": "fsd-p10-student-profile-system",
+        "title": "Program 10: Student Profile System",
+        "language": "HTML/CSS/JS",
+        "tags": ["tables", "objects", "profiles"],
+        "problem": "Aim: To store and display student profiles using arrays of objects.",
+        "code": "<!-- Your HTML, CSS, JS code here -->"
+    }
+]
