@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState, useEffect } from 'react';
@@ -6,12 +5,12 @@ import type { Material, Subject } from '@/lib/types';
 import { MaterialCard } from '@/components/cards/material-card';
 import { Skeleton } from '@/components/ui/skeleton';
 
-interface NotesSectionProps {
-    notes: Material[];
+interface StudyMaterialsSectionProps {
+    materials: Material[];
     subjects: Subject[];
 }
 
-export function NotesSection({ notes, subjects }: NotesSectionProps) {
+export function NotesSection({ materials, subjects }: StudyMaterialsSectionProps) {
     const [loading, setLoading] = useState(true);
 
     const subjectMap = new Map(subjects.map(s => [s.id, s]));
@@ -22,7 +21,7 @@ export function NotesSection({ notes, subjects }: NotesSectionProps) {
             setLoading(false);
         }, 300);
         return () => clearTimeout(timer);
-    }, [notes]);
+    }, [materials]);
 
     return (
         <section id="study-materials" className="py-12 bg-muted/30">
@@ -34,15 +33,15 @@ export function NotesSection({ notes, subjects }: NotesSectionProps) {
                     </p>
                 </div>
                 {loading ? (
-                    <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-3">
-                        {Array.from({ length: 3 }).map((_, i) => (
+                    <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4">
+                        {Array.from({ length: 4 }).map((_, i) => (
                            <Skeleton key={i} className="h-[220px] w-full rounded-xl" />
                         ))}
                     </div>
-                ) : notes.length > 0 ? (
-                    <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-3 animate-fade-in">
-                        {notes.map(note => (
-                            <MaterialCard key={note.id} material={note} subject={subjectMap.get(note.subjectId)} />
+                ) : materials.length > 0 ? (
+                    <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 lg:grid-cols-4 animate-fade-in">
+                        {materials.map(material => (
+                            <MaterialCard key={material.id} material={material} subject={subjectMap.get(material.subjectId)} />
                         ))}
                     </div>
                 ) : (

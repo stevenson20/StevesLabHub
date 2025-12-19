@@ -1,4 +1,3 @@
-
 import type { Subject, Program, Material } from './types';
 import materialsData from './materials.json';
 

@@ -1,4 +1,3 @@
-
 "use client";
 
 import type { Material, Subject } from '@/lib/types';
@@ -52,7 +51,8 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
 
   const config = fileTypeConfig[material.type] || fileTypeConfig.default;
   const canBeViewed = material.fileType === 'PDF' || material.fileType === 'Image';
-  const isExternalLink = material.type === 'Link';
+  const isExternalLink = material.fileType === 'Link';
+  const isDownloadable = material.fileType === 'Document';
   const assetUrl = getAssetPath(material.url);
 
   const handleCardClick = () => {
@@ -60,14 +60,17 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
       setIsViewerOpen(true);
     } else if (isExternalLink) {
       window.open(assetUrl, '_blank', 'noopener,noreferrer');
-    } else {
-      // Programmatically trigger download for other file types
+    } else if (isDownloadable) {
+      // Programmatically trigger download
       const link = document.createElement('a');
       link.href = assetUrl;
       link.download = material.title || 'download';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+    } else {
+        // Fallback for syllabus or other types that are just links to files
+        window.open(assetUrl, '_blank', 'noopener,noreferrer');
     }
   };
   
@@ -107,7 +110,7 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
         )}
         <div className="flex-grow" />
         
-        <Button size="sm" className="mt-4 w-full z-10">
+        <Button size="sm" className="mt-4 w-full z-10" onClick={(e) => { e.stopPropagation(); handleCardClick(); }}>
             {getButtonContent()}
         </Button>
       </div>

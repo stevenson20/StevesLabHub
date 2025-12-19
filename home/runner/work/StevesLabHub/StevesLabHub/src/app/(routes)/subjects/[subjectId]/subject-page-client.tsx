@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Subject, Program, Material } from '@/lib/types';
@@ -33,6 +32,9 @@ export function SubjectPageClient({ subject, subjectPrograms, subjectMaterials }
     cns: 'text-pink-500',
     ws: 'text-indigo-500',
     sfs: 'text-teal-500',
+    mpmc: 'text-rose-500',
+    atcd: 'text-sky-500',
+    ooad: 'text-amber-500',
     default: 'text-foreground'
   };
 
@@ -96,9 +98,9 @@ export function SubjectPageClient({ subject, subjectPrograms, subjectMaterials }
         </section>
       )}
 
-      {!subject.hasLab && subjectMaterials.length === 0 && (
+      {(!subject.hasLab && subjectMaterials.length === 0) && (subjectPrograms.length === 0) && (
          <div className="text-center py-16 text-muted-foreground bg-card rounded-xl">
-          <p className="text-lg font-semibold">No materials available for this subject yet.</p>
+          <p className="text-lg font-semibold">No content available for this subject yet.</p>
           <p>Check back later for updates or explore other subjects.</p>
         </div>
       )}
