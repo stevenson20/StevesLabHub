@@ -9,13 +9,14 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from '@/components/ui/dialog';
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import Link from 'next/link';
 
 type MaterialCardProps = {
   material: Material;
   subject?: Subject;
 };
 
-const fileTypeConfig: Record<string, { icon: React.ReactNode; color: string }> = {
+const fileTypeConfig: Record<Material['type'], { icon: React.ReactNode; color: string }> = {
   PDF: { icon: <FileText />, color: 'bg-destructive/10 text-destructive' },
   Image: { icon: <ImageIcon />, color: 'bg-sky-500/10 text-sky-500' },
   Link: { icon: <LinkIcon />, color: 'bg-primary/10 text-primary' },
@@ -24,7 +25,6 @@ const fileTypeConfig: Record<string, { icon: React.ReactNode; color: string }> =
   'Assignment': { icon: <FileText />, color: 'bg-orange-500/10 text-orange-500' },
   'Notes': { icon: <FileText />, color: 'bg-blue-500/10 text-blue-500' },
   'Syllabus': { icon: <FileText />, color: 'bg-indigo-500/10 text-indigo-500' },
-  'default': { icon: <FileText />, color: 'bg-slate-500/10 text-slate-500' },
 };
 
 const subjectColorClasses: Record<string, string> = {
@@ -50,36 +50,19 @@ const subjectColorClasses: Record<string, string> = {
 export function MaterialCard({ material, subject }: MaterialCardProps) {
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
-  const config = fileTypeConfig[material.type] || fileTypeConfig.default;
+  // Fallback to 'Document' config if type is unknown to prevent crash
+  const config = fileTypeConfig[material.type] || fileTypeConfig.Document;
   const canBeViewed = material.fileType === 'PDF' || material.fileType === 'Image';
   const isExternalLink = material.fileType === 'Link';
   const assetUrl = getAssetPath(material.url);
 
-  const handleCardClick = (e: React.MouseEvent) => {
-    // Prevent card click from interfering with button click
-    if ((e.target as HTMLElement).closest('button')) {
-      return;
-    }
-    e.preventDefault();
-
+  const handleCardClick = () => {
     if (canBeViewed) {
       setIsViewerOpen(true);
     } else if (isExternalLink) {
       window.open(assetUrl, '_blank', 'noopener,noreferrer');
     } else {
-      // For downloadable files, maybe trigger download? For now, do nothing on card click.
-    }
-  };
-
-  const handleButtonClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Stop propagation to card click
-    e.stopPropagation();
-    if (canBeViewed) {
-      setIsViewerOpen(true);
-    } else if (isExternalLink) {
-      window.open(assetUrl, '_blank', 'noopener,noreferrer');
-    } else {
-       // Create a temporary link to trigger download
+       // For downloadable files, trigger download
        const link = document.createElement('a');
        link.href = assetUrl;
        link.download = material.title || 'download';
@@ -87,15 +70,14 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
        link.click();
        document.body.removeChild(link);
     }
-  }
+  };
 
   return (
     <>
       <div 
         onClick={handleCardClick}
         className={cn(
-          "group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col",
-          (canBeViewed || isExternalLink) && "cursor-pointer"
+          "group block rounded-xl border bg-card p-5 transition-all duration-200 hover:border-primary/50 hover:shadow-lg hover:-translate-y-1 h-full flex flex-col cursor-pointer"
         )}
       >
         <div className="flex items-start justify-between">
@@ -116,7 +98,7 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
         )}
         <div className="flex-grow" />
         
-        <Button onClick={handleButtonClick} size="sm" className="mt-4 w-full z-10">
+        <Button onClick={(e) => { e.stopPropagation(); handleCardClick(); }} size="sm" className="mt-4 w-full z-10">
             {canBeViewed ? 'View' : (isExternalLink ? <><LinkIcon className="mr-2 h-4 w-4" /> Open Link</> : <><Download className="mr-2 h-4 w-4" /> Download</>)}
         </Button>
       </div>
