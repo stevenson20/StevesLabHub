@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Code, X, GraduationCap, List, FileText, BookCopy, LayoutDashboard, Gamepad2, Bot, Book, FileQuestion, StickyNote } from 'lucide-react';
+import { Menu, Code, X, GraduationCap, LayoutDashboard, Gamepad2, Book, FileQuestion, StickyNote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
@@ -41,7 +41,7 @@ export function Header() {
   const isGamesPage = pathname.startsWith('/games');
 
   const NavLink = ({ href, label, icon: Icon, isMobile = false }: { href: string, label: string, icon: React.ElementType, isMobile?: boolean }) => {
-    const isActive = (pathname === href || (href === '/dashboard' && isDashboardPage));
+    const isActive = (pathname === href || (href.startsWith('/dashboard') && isDashboardPage));
     
     return (
       <Button
@@ -49,10 +49,10 @@ export function Header() {
         variant="ghost"
         className={cn(
           "justify-start text-muted-foreground hover:text-foreground hover:bg-accent",
-           (isActive || (href === '/games' && isGamesPage)) && "bg-primary/10 text-primary",
+           (isActive || (href.startsWith('/games') && isGamesPage)) && "bg-primary/10 text-primary",
            isMobile ? "w-full text-base py-6" : "text-sm"
         )}
-        onClick={() => {if (isMobile) setMobileMenuOpen(false)}}
+        onClick={() => isMobile && setMobileMenuOpen(false)}
       >
         <Link href={href}>
           {isMobile && <Icon className="mr-2 h-5 w-5" />}

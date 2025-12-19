@@ -91,7 +91,7 @@ allSubjectsData.forEach(data => {
     };
     processedSubjects.push(subject);
 
-    const subjectPrograms: Program[] = data.programs.map((p: any) => ({
+    const subjectPrograms: Program[] = (data.programs as any[]).map((p: any) => ({
         ...p,
         subjectId: subject.id,
         year: subject.year,
