@@ -3,6 +3,10 @@
     "id": "23CS31T1",
     "name": "Artificial Intelligence",
     "short": "Core concepts of AI and machine learning.",
+    "shortTitle": "AI",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "ai",
+    "year": 3,
+    "semester": 1
 }

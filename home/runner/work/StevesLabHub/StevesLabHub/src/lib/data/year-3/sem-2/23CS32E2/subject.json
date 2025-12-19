@@ -3,6 +3,10 @@
     "id": "23CS32E2",
     "name": "Cyber Security",
     "short": "Principles and practices of cyber security.",
+    "shortTitle": "CS",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "cyber",
+    "year": 3,
+    "semester": 2
 }

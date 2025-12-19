@@ -3,6 +3,10 @@
     "id": "23CS31P2",
     "name": "Computer Networks & Internet Protocols Lab",
     "short": "Hands-on experience with network programming and protocols.",
+    "shortTitle": "CN & IP Lab",
     "hasLab": true,
-    "isLabOnly": true
+    "isLabOnly": true,
+    "color": "cn",
+    "year": 3,
+    "semester": 1
 }

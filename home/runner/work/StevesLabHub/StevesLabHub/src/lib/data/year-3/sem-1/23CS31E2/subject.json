@@ -1,0 +1,12 @@
+
+{
+    "id": "23CS31E2",
+    "name": "Soft Computing",
+    "short": "Introduction to fuzzy logic, neural networks, and genetic algorithms.",
+    "shortTitle": "Soft Computing",
+    "hasLab": false,
+    "isLabOnly": false,
+    "color": "default",
+    "year": 3,
+    "semester": 1
+}

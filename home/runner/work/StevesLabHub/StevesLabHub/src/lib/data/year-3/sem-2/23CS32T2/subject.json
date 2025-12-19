@@ -3,6 +3,10 @@
     "id": "23CS32T2",
     "name": "Cloud Computing",
     "short": "Fundamentals of cloud computing models and services.",
+    "shortTitle": "CC",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "cloud",
+    "year": 3,
+    "semester": 2
 }

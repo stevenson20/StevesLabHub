@@ -3,6 +3,10 @@
     "id": "23CS32P2",
     "name": "Cryptography and Network Security Lab",
     "short": "Practical implementation of security protocols.",
+    "shortTitle": "CNS Lab",
     "hasLab": true,
-    "isLabOnly": true
+    "isLabOnly": true,
+    "color": "cns",
+    "year": 3,
+    "semester": 2
 }

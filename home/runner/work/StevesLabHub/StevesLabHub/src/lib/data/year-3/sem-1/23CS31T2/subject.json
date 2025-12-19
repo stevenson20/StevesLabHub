@@ -3,6 +3,10 @@
     "id": "23CS31T2",
     "name": "Computer Networks & Internet Protocols",
     "short": "Study of network layers, protocols, and the internet.",
+    "shortTitle": "CN & IP",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "cn",
+    "year": 3,
+    "semester": 1
 }

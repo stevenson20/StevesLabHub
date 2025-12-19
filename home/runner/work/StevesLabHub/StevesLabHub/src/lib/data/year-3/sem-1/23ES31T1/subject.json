@@ -3,6 +3,10 @@
     "id": "23ES31T1",
     "name": "Introduction To Quantum Technologies And Applications",
     "short": "Basics of quantum computing and its applications.",
+    "shortTitle": "IQTA",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "default",
+    "year": 3,
+    "semester": 1
 }

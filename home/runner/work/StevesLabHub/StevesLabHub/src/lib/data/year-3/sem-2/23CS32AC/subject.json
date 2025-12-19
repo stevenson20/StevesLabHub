@@ -3,6 +3,10 @@
     "id": "23CS32AC",
     "name": "Technical Report Writing & IPR",
     "short": "Skills for research paper writing and IPR concepts.",
+    "shortTitle": "TRW & IPR",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "writing",
+    "year": 3,
+    "semester": 2
 }

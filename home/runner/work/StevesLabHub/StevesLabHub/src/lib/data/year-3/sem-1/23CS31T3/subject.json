@@ -3,6 +3,10 @@
     "id": "23CS31T3",
     "name": "Automata Theory And Compiler Design",
     "short": "Formal languages, automata, and compiler principles.",
+    "shortTitle": "ATCD",
     "hasLab": false,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "fsd",
+    "year": 3,
+    "semester": 1
 }

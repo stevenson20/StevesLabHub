@@ -3,6 +3,10 @@
     "id": "23ES31P1",
     "name": "Tinkering Lab",
     "short": "Experimentation with hardware and IoT devices.",
+    "shortTitle": "Tinkering",
     "hasLab": true,
-    "isLabOnly": true
+    "isLabOnly": true,
+    "color": "tinkering",
+    "year": 3,
+    "semester": 1
 }

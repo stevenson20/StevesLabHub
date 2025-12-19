@@ -3,6 +3,10 @@
     "id": "23CS32T1",
     "name": "Machine Learning",
     "short": "Core machine learning algorithms and techniques.",
+    "shortTitle": "ML",
     "hasLab": true,
-    "isLabOnly": false
+    "isLabOnly": false,
+    "color": "ml",
+    "year": 3,
+    "semester": 2
 }
