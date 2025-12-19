@@ -1,6 +1,5 @@
 
 import type { Subject, Program, Note, Syllabus, Material } from './types';
-import programsData from './programs.json';
 import materialsData from './materials.json';
 
 // --- Data from old structure (year-X/sem-Y.json) ---
@@ -31,11 +30,17 @@ import y3s2_23CS32AC_sub from './data/year-3/sem-2/23CS32AC/subject.json';
 import y3s2_23CS32P1_sub from './data/year-3/sem-2/23CS32P1/subject.json';
 import y3s2_23CS32P1_prog from './data/year-3/sem-2/23CS32P1/programs.json';
 import y3s2_23CS32P2_sub from './data/year-3/sem-2/23CS32P2/subject.json';
+import y3s2_23CS32P2_prog from './data/year-3/sem-2/23CS32P2/programs.json';
 import y3s2_23CS32SC_sub from './data/year-3/sem-2/23CS32SC/subject.json';
+import y3s2_23CS32SC_prog from './data/year-3/sem-2/23CS32SC/programs.json';
 import y3s2_23CS32T1_sub from './data/year-3/sem-2/23CS32T1/subject.json';
+import y3s2_23CS32T1_prog from './data/year-3/sem-2/23CS32T1/programs.json';
 import y3s2_23CS32T2_sub from './data/year-3/sem-2/23CS32T2/subject.json';
+import y3s2_23CS32T2_prog from './data/year-3/sem-2/23CS32T2/programs.json';
 import y3s2_23CS32T3_sub from './data/year-3/sem-2/23CS32T3/subject.json';
+import y3s2_23CS32T3_prog from './data/year-3/sem-2/23CS32T3/programs.json';
 import y3s2_23CS32E2_sub from './data/year-3/sem-2/23CS32E2/subject.json';
+import y3s2_23CS32E2_prog from './data/year-3/sem-2/23CS32E2/programs.json';
 
 const subjectColorMap: Record<string, Subject['color']> = {
     '23AD31SC': 'fsd', '23CS31P1': 'ai', '23CS31P2': 'cn', '23ES31P1': 'tinkering',
@@ -114,6 +119,12 @@ export const programs: Program[] = [
     ...processPrograms(y3s1_23CS31P2_prog, '23CS31P2'),
     ...processPrograms(y3s1_23ES31P1_prog, '23ES31P1'),
     ...processPrograms(y3s2_23CS32P1_prog, '23CS32P1'),
+    ...processPrograms(y3s2_23CS32P2_prog, '23CS32P2'),
+    ...processPrograms(y3s2_23CS32SC_prog, '23CS32SC'),
+    ...processPrograms(y3s2_23CS32T1_prog, '23CS32T1'),
+    ...processPrograms(y3s2_23CS32T2_prog, '23CS32T2'),
+    ...processPrograms(y3s2_23CS32T3_prog, '23CS32T3'),
+    ...processPrograms(y3s2_23CS32E2_prog, '23CS32E2'),
 ];
 
 export const materials: Material[] = materialsData.materials.map(m => {
