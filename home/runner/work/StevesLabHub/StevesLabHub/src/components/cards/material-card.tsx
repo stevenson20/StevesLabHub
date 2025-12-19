@@ -16,7 +16,7 @@ type MaterialCardProps = {
   subject?: Subject;
 };
 
-const fileTypeConfig = {
+const fileTypeConfig: Record<Material['type'], { icon: React.ReactNode; color: string }> = {
   PDF: { icon: <FileText />, color: 'bg-destructive/10 text-destructive' },
   Image: { icon: <ImageIcon />, color: 'bg-sky-500/10 text-sky-500' },
   Link: { icon: <LinkIcon />, color: 'bg-primary/10 text-primary' },
@@ -47,7 +47,8 @@ const subjectColorClasses: Record<string, string> = {
 export function MaterialCard({ material, subject }: MaterialCardProps) {
   const [isViewerOpen, setIsViewerOpen] = useState(false);
 
-  const config = fileTypeConfig[material.type as keyof typeof fileTypeConfig] || fileTypeConfig.Document;
+  // Fallback to 'Document' config if type is unknown
+  const config = fileTypeConfig[material.type] || fileTypeConfig.Document;
   const canBeViewed = material.fileType === 'PDF' || material.fileType === 'Image';
   const assetUrl = getAssetPath(material.url);
 
@@ -96,11 +97,11 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
 
   return (
     <>
-      <div onClick={canBeViewed ? handleAction : undefined} className={cn("h-full", canBeViewed && "cursor-pointer")}>
+       <div onClick={canBeViewed ? handleAction : undefined} className={cn("h-full", canBeViewed && "cursor-pointer")}>
         {canBeViewed ? content : (
-            <Link href={assetUrl} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer" className="h-full block">
+            <a href={assetUrl} target={material.fileType === 'Link' ? '_blank' : '_self'} rel="noopener noreferrer" className="h-full block">
               {content}
-            </Link>
+            </a>
         )}
       </div>
 
