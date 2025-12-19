@@ -96,7 +96,7 @@ export function MaterialCard({ material, subject }: MaterialCardProps) {
 
   const Wrapper = canBeViewed ? 'div' : Link;
   const wrapperProps = canBeViewed 
-    ? { className: "h-full" } 
+    ? { className: "h-full", onClick: handleAction } 
     : { href: assetUrl, target: "_blank", rel: "noopener noreferrer", className: "h-full" };
 
   return (
