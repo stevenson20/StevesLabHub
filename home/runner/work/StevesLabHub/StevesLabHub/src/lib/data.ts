@@ -386,5 +386,3 @@ export const materials: Material[] = materialsData.materials.map((m: any) => {
 
 export const notes: Note[] = [];
 export const syllabi: Syllabus[] = [];
-
-    

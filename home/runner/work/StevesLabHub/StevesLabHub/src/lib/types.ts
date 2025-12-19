@@ -1,3 +1,4 @@
+
 export interface Program {
   id: string;
   title: string;
@@ -36,3 +37,7 @@ export interface Material {
   year: number;
   semester: number;
 }
+
+
+export type Syllabus = Omit<Material, "type"> & { type: 'Syllabus' };
+export type Note = Omit<Material, "type"> & { type: 'Notes' | 'Link' | 'PDF' | 'Image' | 'Document' };
