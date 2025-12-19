@@ -1,254 +1,134 @@
 
-import type { Subject, Program, Note, Syllabus, Material } from './types';
-import programsData from './programs.json';
+import type { Subject, Program, Material } from './types';
 import materialsData from './materials.json';
-import year1sem1 from './data/year-1/sem-1.json';
-import year1sem2 from './data/year-1/sem-2.json';
-import year2sem1 from './data/year-2/sem-1.json';
-import year2sem2 from './data/year-2/sem-2.json';
-import year3sem1 from './data/year-3/sem-1.json';
-import year3sem2 from './data/year-3/sem-2.json';
 
-const allYearSubjects = [
-    ...year1sem1.subjects,
-    ...year1sem2.subjects,
-    ...year2sem1.subjects,
-    ...year2sem2.subjects,
-    ...year3sem1.subjects,
-    ...year3sem2.subjects,
-];
+// --- New Structure Data ---
+// Year 3, Semester 1
+import y3s1_23AD31SC_sub from './data/year-3/sem-1/23AD31SC/subject.json';
+import y3s1_23AD31SC_prog from './data/year-3/sem-1/23AD31SC/programs.json';
+import y3s1_23CS31P1_sub from './data/year-3/sem-1/23CS31P1/subject.json';
+import y3s1_23CS31P1_prog from './data/year-3/sem-1/23CS31P1/programs.json';
+import y3s1_23CS31P2_sub from './data/year-3/sem-1/23CS31P2/subject.json';
+import y3s1_23CS31P2_prog from './data/year-3/sem-1/23CS31P2/programs.json';
+import y3s1_23ES31P1_sub from './data/year-3/sem-1/23ES31P1/subject.json';
+import y3s1_23ES31P1_prog from './data/year-3/sem-1/23ES31P1/programs.json';
+import y3s1_23CS31T1_sub from './data/year-3/sem-1/23CS31T1/subject.json';
+import y3s1_23CS31T2_sub from './data/year-3/sem-1/23CS31T2/subject.json';
+import y3s1_23CS31T3_sub from './data/year-3/sem-1/23CS31T3/subject.json';
+import y3s1_23CS31E4_sub from './data/year-3/sem-1/23CS31E4/subject.json';
+import y3s1_23ES31T1_sub from './data/year-3/sem-1/23ES31T1/subject.json';
+
+// Year 3, Semester 2
+import y3s2_23CS32AC_sub from './data/year-3/sem-2/23CS32AC/subject.json';
+import y3s2_23CS32P1_sub from './data/year-3/sem-2/23CS32P1/subject.json';
+import y3s2_23CS32P1_prog from './data/year-3/sem-2/23CS32P1/programs.json';
+import y3s2_23CS32P2_sub from './data/year-3/sem-2/23CS32P2/subject.json';
+import y3s2_23CS32P2_prog from './data/year-3/sem-2/23CS32P2/programs.json';
+import y3s2_23CS32SC_sub from './data/year-3/sem-2/23CS32SC/subject.json';
+import y3s2_23CS32SC_prog from './data/year-3/sem-2/23CS32SC/programs.json';
+import y3s2_23CS32T1_sub from './data/year-3/sem-2/23CS32T1/subject.json';
+import y3s2_23CS32T1_prog from './data/year-3/sem-2/23CS32T1/programs.json';
+import y3s2_23CS32T2_sub from './data/year-3/sem-2/23CS32T2/subject.json';
+import y3s2_23CS32T2_prog from './data/year-3/sem-2/23CS32T2/programs.json';
+import y3s2_23CS32T3_sub from './data/year-3/sem-2/23CS32T3/subject.json';
+import y3s2_23CS32T3_prog from './data/year-3/sem-2/23CS32T3/programs.json';
+import y3s2_23CS32E2_sub from './data/year-3/sem-2/23CS32E2/subject.json';
+import y3s2_23CS32E2_prog from './data/year-3/sem-2/23CS32E2/programs.json';
 
 const subjectColorMap: Record<string, Subject['color']> = {
-  'ai-lab': 'ai',
-  'fsd-lab-2': 'fsd',
-  'cn-ip-lab': 'cn',
-  'tinkering-lab': 'tinkering',
-  'spm': 'spm',
-  'cyber-security': 'cyber',
-  'cloud-computing': 'cloud',
-  'ml': 'ml',
-  'tpw-ipr': 'writing',
-  'aw-ps': 'speaking',
-  'cns': 'cns',
-  'ws': 'ws',
-  'sfs': 'sfs',
-  '23A15501': 'speaking', // Communicative English
-  '23A15301': 'cloud', // Chemistry
-  '23A15101': 'ml', // Linear Algebra & Calculus
-  '23A11301': 'tinkering', // Basic Civil & Mechanical Engineering
-  '23A10501': 'fsd', // Introduction to Programming
-  '23A15502': 'speaking', // Communicative English Lab
-  '23A15302': 'cloud', // Chemistry Lab
-  '23A10302': 'tinkering', // Engineering Workshop
-  '23A10502': 'fsd', // Computer Programming Lab
-  '23A15901': 'sfs', // Health and wellness, Yoga and sports
-  '23A25201': 'ai', // Engineering Physics
-  '23A25101': 'ml', // Differential Equations and Vector Calculus
-  '23A22401': 'cn', // Basic Electrical and Electronics Engineering
-  '23A20302': 'tinkering', // Engineering Graphics
-  '23A20501': 'fsd', // Data Structures
-  '23A25202': 'ai', // Engineering Physics Lab
-  '23A20501-it': 'ws', // IT Work Shop - custom id
-  '23A22402': 'cn', // Electrical and Electronics Engineering Workshop
-  '23A20503': 'fsd', // Data Structures -Lab
-  '23A25902': 'sfs', // NSS/NCC /SCOUTS and Guides/ Community Service
-  '23A35105': 'ml',
-  '23A35401a': 'spm',
-  '23A30503': 'cn',
-  '23A30504': 'fsd',
-  '23A30505': 'ai',
-  '23A30506': 'fsd',
-  '23A30507': 'ai',
-  '23A30502': 'fsd',
-  '23A45102': 'ml',
-  '23A40501': 'cn',
-  '23A40502': 'spm',
-  '23A40503': 'writing',
-  '23A40504': 'cn',
-  '23A40505': 'spm',
-  '23A40506': 'fsd',
-  '23A49901': 'tinkering',
-  '23CS3101': 'ai',
-  '23CS3102': 'ai',
-  '23CS31T1': 'ai',
-  '23CS31T2': 'cn',
-  '23CS31T3': 'fsd',
-  '23CS31E1': 'writing',
-  '23CS31E2': 'ai',
-  '23CS31E3': 'cn',
-  '23CS31E4': 'spm',
-  '23CS31P1': 'ai',
-  '23CS31P2': 'cn',
-  '23ES31P1': 'tinkering',
-  '23ES31T1': 'ai',
-  '23AD31SC': 'fsd',
-  '23CS3201': 'ws',
-  '23CS3202': 'ml',
-  '23CS32T1': 'fsd',
-  '23CS32T2': 'cns',
-  '23CS32T3': 'cn',
-  '23CS32E1': 'cloud',
-  '23CS32E2': 'ai',
-  '23CS32E3': 'fsd',
-  '23CS32E4': 'cn',
-  '23CS32P1': 'ws',
-  '23CS32P2': 'ml',
-  '23AD32SC': 'fsd',
-  '23CS32AC': 'writing'
+    '23AD31SC': 'fsd', '23CS31P1': 'ai', '23CS31P2': 'cn', '23ES31P1': 'tinkering',
+    '23CS31T1': 'ai', '23CS31T2': 'cn', '23CS31T3': 'fsd', '23CS31E4': 'spm', '23ES31T1': 'ai',
+    '23CS32AC': 'writing', '23CS32P1': 'ml', '23CS32P2': 'cns', '23CS32SC': 'speaking',
+    '23CS32T1': 'ml', '23CS32T2': 'cloud', '23CS32T3': 'cns', '23CS32E2': 'cyber',
 };
 
 const shortTitleMap: Record<string, string> = {
-    'ai-lab': 'AI Lab',
-    'fsd-lab-2': 'FSD Lab',
-    'cn-ip-lab': 'CN Lab',
-    'tinkering-lab': 'Tinkering',
-    'spm': 'SPM',
-    'cyber-security': 'CS',
-    'cloud-computing': 'CDC',
-    'ml': 'ML',
-    'tpw-ipr': 'TPW',
-    'aw-ps': 'AWPS',
-    'cns': 'CNS',
-    'ws': 'W.S',
-    'sfs': 'SFS',
-    '23A15501': 'English',
-    '23A15301': 'Chemistry',
-    '23A15101': 'Maths-I',
-    '23A11301': 'BCME',
-    '23A10501': 'C-Prog',
-    '23A15502': 'Eng Lab',
-    '23A15302': 'Chem Lab',
-    '23A10302': 'Workshop',
-    '23A10502': 'C-Prog Lab',
-    '23A15901': 'Yoga',
-    '23A25201': 'Physics',
-    '23A25101': 'Maths-II',
-    '23A22401': 'BEE',
-    '23A20302': 'Graphics',
-    '23A20501': 'DS',
-    '23A25202': 'Physics Lab',
-    '23A20501-it': 'IT Shop',
-    '23A22402': 'BEE Shop',
-    '23A20503': 'DS Lab',
-    '23A25902': 'NSS/NCC',
-    '23A35105': 'DMGT',
-    '23A35401a': 'MEFA',
-    '23A30503': 'DLCO',
-    '23A30504': 'ADSA',
-    '23A30505': 'JAVA',
-    '23A30506': 'ADSA Lab',
-    '23A30507': 'JAVA Lab',
-    '23A30502': 'Python',
-    '23A45102': 'P&S',
-    '23A40501': 'OS',
-    '23A40502': 'DBMS',
-    '23A40503': 'SE',
-    '23A40504': 'OS Lab',
-    '23A40505': 'DBMS Lab',
-    '23A40506': 'FSD',
-    '23A49901': 'Design',
-    '23CS3101': 'Java',
-    '23CS3102': 'Intro AI',
-    '23CS31T1': 'AI',
-    '23CS31T2': 'CN & IP',
-    '23CS31T3': 'ATCD',
-    '23CS31E1': 'OOAD',
-    '23CS31E2': 'Soft Comp',
-    '23CS31E3': 'MPMC',
-    '23CS31E4': 'DMDW',
-    '23CS31P1': 'AI Lab',
-    '23CS31P2': 'CN & IP Lab',
-    '23ES31P1': 'Tinkering',
-    '23ES31T1': 'Quantum',
-    '23AD31SC': 'FSD-II',
-    '23CS3201': 'WT',
-    '23CS3202': 'ML',
-    '23CS32T1': 'CD',
-    '23CS32T2': 'CNS',
-    '23CS32T3': 'DS',
-    '23CS32E1': 'CC',
-    '23CS32E2': 'NLP',
-    '23CS32E3': 'JS',
-    '23CS32E4': 'IOT',
-    '23CS32P1': 'WT Lab',
-    '23CS32P2': 'ML Lab',
-    '23AD32SC': 'React',
-    '23CS32AC': 'TRW & IPR'
+    '23AD31SC': 'FSD-II', '23CS31P1': 'AI Lab', '23CS31P2': 'CN & IP Lab', '23ES31P1': 'Tinkering',
+    '23CS31T1': 'AI', '23CS31T2': 'CN & IP', '23CS31T3': 'ATCD', '23CS31E4': 'DMDW', '23ES31T1': 'Quantum',
+    '23CS32AC': 'TRW & IPR', '23CS32P1': 'ML Lab', '23CS32P2': 'CNS Lab', '23CS32SC': 'Soft Skills',
+    '23CS32T1': 'ML', '23CS32T2': 'CC', '23CS32T3': 'CNS', '23CS32E2': 'CS'
 };
 
-
-const combinedSubjectsRaw = [...allYearSubjects, ...programsData.subjects];
-const subjectMap = new Map<string, Subject>();
-
-combinedSubjectsRaw.forEach(s => {
-    if (!subjectMap.has(s.id)) {
-        subjectMap.set(s.id, {
-            id: s.id,
-            title: s.name,
-            shortTitle: shortTitleMap[s.id] || s.short || s.name.split(' ')[0],
-            description: s.short || s.description || '',
-            color: subjectColorMap[s.id] || 'default',
-            hasLab: s.hasLab,
-            isLabOnly: s.isLabOnly,
-            year: s.year,
-            semester: s.semester,
-        });
-    }
+const processSubject = (sub: any, year: number, semester: number): Subject => ({
+    ...sub,
+    year,
+    semester,
+    title: sub.name,
+    shortTitle: shortTitleMap[sub.id] || sub.short || sub.name.split(' ')[0],
+    description: sub.short,
+    color: subjectColorMap[sub.id] || 'default'
 });
 
+const y3s1_subjects = [
+    processSubject(y3s1_23AD31SC_sub, 3, 1),
+    processSubject(y3s1_23CS31P1_sub, 3, 1),
+    processSubject(y3s1_23CS31P2_sub, 3, 1),
+    processSubject(y3s1_23ES31P1_sub, 3, 1),
+    processSubject(y3s1_23CS31T1_sub, 3, 1),
+    processSubject(y3s1_23CS31T2_sub, 3, 1),
+    processSubject(y3s1_23CS31T3_sub, 3, 1),
+    processSubject(y3s1_23CS31E4_sub, 3, 1),
+    processSubject(y3s1_23ES31T1_sub, 3, 1),
+];
 
-export const subjects: Subject[] = Array.from(subjectMap.values());
+const y3s2_subjects = [
+    processSubject(y3s2_23CS32AC_sub, 3, 2),
+    processSubject(y3s2_23CS32P1_sub, 3, 2),
+    processSubject(y3s2_23CS32P2_sub, 3, 2),
+    processSubject(y3s2_23CS32SC_sub, 3, 2),
+    processSubject(y3s2_23CS32T1_sub, 3, 2),
+    processSubject(y3s2_23CS32T2_sub, 3, 2),
+    processSubject(y3s2_23CS32T3_sub, 3, 2),
+    processSubject(y3s2_23CS32E2_sub, 3, 2),
+];
 
-export const programs: Program[] = programsData.subjects.flatMap(subject => 
-  (subject.programs || []).map(p => {
-      const sub = subjectMap.get(subject.id);
-      return {
-        id: p.id,
-        title: p.title,
-        language: p.language,
-        tags: p.tags,
+
+export const subjects: Subject[] = [
+    ...y3s1_subjects,
+    ...y3s2_subjects,
+];
+const subjectMap = new Map(subjects.map(s => [s.id, s]));
+
+const processPrograms = (programsArr: any[], subjectId: string): Program[] => {
+    const sub = subjectMap.get(subjectId);
+    if (!sub) return [];
+    return programsArr.map((p: any) => ({
+        ...p,
+        subjectId: subjectId,
+        year: sub.year,
+        semester: sub.semester,
         aim: p.problem,
-        code: p.code,
-        canRunInBrowser: p.language.toLowerCase() === 'html/css/js',
-        subjectId: subject.id,
-        year: sub?.year || 4,
-        semester: sub?.semester || 1,
-      };
-  })
-);
+        canRunInBrowser: p.language?.toLowerCase() === 'html/css/js',
+        // Make sure all required fields are present
+        language: p.language || 'N/A',
+        tags: p.tags || [],
+        code: p.code || 'No code available.'
+    }));
+}
 
-let noteIdCounter = 1;
-export const notes: Note[] = (programsData.notes || []).map(n => {
-    const matchingSubject = subjects.find(s => s.shortTitle.toLowerCase() === n.subject.toLowerCase() || s.title.toLowerCase().includes(n.subject.toLowerCase()));
-    return {
-        id: `note-${noteIdCounter++}`,
-        title: n.title,
-        subjectId: matchingSubject ? matchingSubject.id : 'tinkering-lab',
-        type: n.type as 'PDF' | 'Link' | 'Document',
-        url: n.url,
-        year: matchingSubject?.year || 4,
-        semester: matchingSubject?.semester || 1,
-    };
-});
+export const programs: Program[] = [
+    ...processPrograms(y3s1_23AD31SC_prog, '23AD31SC'),
+    ...processPrograms(y3s1_23CS31P1_prog, '23CS31P1'),
+    ...processPrograms(y3s1_23CS31P2_prog, '23CS31P2'),
+    ...processPrograms(y3s1_23ES31P1_prog, '23ES31P1'),
+    ...processPrograms(y3s2_23CS32P1_prog, '23CS32P1'),
+    ...processPrograms(y3s2_23CS32P2_prog, '23CS32P2'),
+    ...processPrograms(y3s2_23CS32SC_prog, '23CS32SC'),
+    ...processPrograms(y3s2_23CS32T1_prog, '23CS32T1'),
+    ...processPrograms(y3s2_23CS32T2_prog, '23CS32T2'),
+    ...processPrograms(y3s2_23CS32T3_prog, '23CS32T3'),
+    ...processPrograms(y3s2_23CS32E2_prog, '23CS32E2'),
+];
 
-export const syllabi: Syllabus[] = (programsData.syllabi || []).map(s => {
-    const matchingSubject = subjects.find(subj => subj.id === s.subjectId);
-    return {
-        id: s.id,
-        title: s.title,
-        subjectId: s.subjectId,
-        type: s.type as 'PDF' | 'Link',
-        url: s.url,
-        year: matchingSubject?.year || 1,
-        semester: matchingSubject?.semester || 1,
-    };
-});
-
-export const materials: Material[] = materialsData.materials.map(m => {
-    const matchingSubject = subjects.find(s => s.id === m.subjectId);
+export const materials: Material[] = materialsData.materials.map((m: any) => {
+    const sub = subjectMap.get(m.subjectId);
     return {
         ...m,
-        year: matchingSubject?.year || 4,
-        semester: matchingSubject?.semester || 1,
-    } as Material;
-});
+        year: sub?.year ?? 0,
+        semester: sub?.semester ?? 0,
+    };
+}).filter((m: any) => m.year !== 0);
+
+// These are now part of materials.json
+export const notes: Note[] = [];
+export const syllabi: Syllabus[] = [];

@@ -75,11 +75,14 @@ export function SubjectCard({ subject, programCount }: SubjectCardProps) {
             <div className={cn("flex h-12 w-12 items-center justify-center rounded-xl", iconBgClasses[subject.color])}>
                 {iconMap[subject.color]}
             </div>
-             {subject.hasLab && (
-                <Badge variant="outline" className="border-accent-foreground/30 bg-accent/80 text-accent-foreground">
-                    {subject.isLabOnly ? "Lab" : "Lab+Theory"}
-                </Badge>
-            )}
+            <div className='flex items-center gap-2'>
+                <Badge variant="outline" className="border-current/30 bg-current/10 text-current">R-23</Badge>
+                {subject.hasLab && (
+                    <Badge variant="outline" className="border-accent-foreground/30 bg-accent/80 text-accent-foreground">
+                        {subject.isLabOnly ? "Lab" : "Lab+Theory"}
+                    </Badge>
+                )}
+            </div>
         </div>
       
         <div className="flex-grow mt-4">

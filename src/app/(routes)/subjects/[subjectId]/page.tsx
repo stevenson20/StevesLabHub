@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { subjects, programs, materials } from '@/lib/data';
@@ -22,7 +23,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function SubjectPage({ params }: { params: { subjectId: string } }) {
+export default function SubjectPage({ params, searchParams }: { params: { subjectId: string }, searchParams: { year?: string, sem?: string } }) {
   const data = getSubjectData(params.subjectId);
 
   if (!data) {
@@ -30,11 +31,13 @@ export default function SubjectPage({ params }: { params: { subjectId: string } 
   }
 
   const { subject, subjectPrograms, subjectMaterials } = data;
+  const year = searchParams.year || subject.year;
+  const sem = searchParams.sem || subject.semester;
 
   return (
     <div className="container py-12">
        <Button asChild variant="ghost" className="mb-8">
-        <Link href={`/dashboard#subjects`}>
+        <Link href={`/dashboard?year=${year}&sem=${sem}#subjects`}>
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Subjects
         </Link>

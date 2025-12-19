@@ -1,3 +1,4 @@
+
 export interface Program {
   id: string;
   title: string;
@@ -9,6 +10,7 @@ export interface Program {
   subjectId: string;
   year: number;
   semester: number;
+  problem: string;
 }
 
 export interface Subject {
@@ -21,32 +23,36 @@ export interface Subject {
   isLabOnly: boolean;
   year: number;
   semester: number;
+  name: string;
+  short?: string;
 }
 
 export interface Note {
   id: string;
   title: string;
   subjectId: string;
-  type: 'PDF' | 'Link' | 'Document';
+  type: 'PDF' | 'Link' | 'Document' | 'Notes' | 'Assignment' | 'Question Paper' | 'Image';
   url: string;
   year: number;
   semester: number;
+  fileType: 'PDF' | 'Image' | 'Link' | 'Document';
 }
 
 export interface Syllabus {
   id: string;
   title: string;
   subjectId: string;
-  type: 'PDF' | 'Link';
+  type: 'PDF' | 'Link' | 'Syllabus';
   url: string;
   year: number;
   semester: number;
+  fileType: 'PDF' | 'Image' | 'Link' | 'Document';
 }
 
 export interface Material {
   id: string;
   subjectId: string;
-  type: 'Assignment' | 'Question Paper' | 'Notes' | 'Image';
+  type: 'Assignment' | 'Question Paper' | 'Notes' | 'Image' | 'Link' | 'Syllabus';
   title: string;
   url: string;
   fileType: 'PDF' | 'Image' | 'Link' | 'Document';

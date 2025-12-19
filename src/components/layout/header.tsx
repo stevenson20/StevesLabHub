@@ -4,18 +4,25 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Code, X, GraduationCap, List, FileText, BookCopy, LayoutDashboard, Gamepad2, Bot } from 'lucide-react';
+import { Menu, Code, X, GraduationCap, List, FileText, BookCopy, LayoutDashboard, Gamepad2, Bot, Book, FileQuestion, StickyNote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggle } from './theme-toggle';
+import { Separator } from '../ui/separator';
 
-const navItems = [
+const mainNavItems = [
   { href: '/', label: 'Home', icon: GraduationCap },
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/games', label: 'Games', icon: Gamepad2 },
-  // { href: '/ai-tools', label: 'AI Tools', icon: Bot },
 ];
+
+const mobileExtraNavItems = [
+    { href: '/dashboard#subjects', label: 'Subjects', icon: Book },
+    { href: '/dashboard#all-programs', label: 'Lab Programs', icon: Code },
+    { href: '/dashboard#study-materials', label: 'Study Materials', icon: FileQuestion },
+    { href: '/dashboard#notes', label: 'Notes & Links', icon: StickyNote },
+]
 
 export function Header() {
   const [scrolled, setScrolled] = React.useState(false);
@@ -32,11 +39,9 @@ export function Header() {
 
   const isDashboardPage = pathname.startsWith('/dashboard');
   const isGamesPage = pathname.startsWith('/games');
-  const isAiToolsPage = pathname.startsWith('/ai-tools');
-  const isHomePage = pathname === '/';
 
   const NavLink = ({ href, label, icon: Icon, isMobile = false }: { href: string, label: string, icon: React.ElementType, isMobile?: boolean }) => {
-    const isActive = (pathname === href || (href === '/dashboard' && isDashboardPage));
+    const isActive = (pathname === href || (href.startsWith('/dashboard') && isDashboardPage));
     
     return (
       <Button
@@ -57,8 +62,6 @@ export function Header() {
     );
   };
   
-  const allNavItems = navItems;
-
   return (
     <header
       className={cn(
@@ -77,7 +80,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center space-x-2 md:flex">
-          {allNavItems.map((item) => (
+          {mainNavItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}
         </nav>
@@ -113,9 +116,12 @@ export function Header() {
                   </div>
                 </SheetHeader>
               <div className="p-4">
-                
                 <nav className="flex flex-col gap-2">
-                  {allNavItems.map((item) => (
+                  {mainNavItems.map((item) => (
+                    <NavLink key={item.href} {...item} isMobile />
+                  ))}
+                  <Separator className="my-2" />
+                  {mobileExtraNavItems.map((item) => (
                     <NavLink key={item.href} {...item} isMobile />
                   ))}
                 </nav>

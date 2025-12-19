@@ -7,7 +7,7 @@ import { SubjectsSection } from '@/components/sections/subjects-section';
 import { AllProgramsSection } from '@/components/sections/all-programs-section';
 import { NotesSection } from '@/components/sections/notes-section';
 import { SyllabusSection } from '@/components/sections/syllabus-section';
-import { subjects, programs, notes, syllabi, materials } from '@/lib/data';
+import { materials, programs, subjects } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
@@ -15,7 +15,7 @@ export function DashboardClient() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [activeYear, setActiveYear] = useState(searchParams.get('year') || '1');
+  const [activeYear, setActiveYear] = useState(searchParams.get('year') || '3');
   const [activeSem, setActiveSem] = useState(searchParams.get('sem') || '1');
 
   useEffect(() => {
@@ -34,14 +34,6 @@ export function DashboardClient() {
         const subject = subjects.find(s => s.id === p.subjectId);
         return subject && subject.year === year && subject.semester === sem;
       }),
-      notes: notes.filter(n => {
-        const subject = subjects.find(s => s.id === n.subjectId);
-        return subject && subject.year === year && subject.semester === sem;
-      }),
-      syllabi: syllabi.filter(s => {
-         const subject = subjects.find(subj => subj.id === s.subjectId);
-         return subject && subject.year === year && subject.semester === sem;
-      }),
       materials: materials.filter(m => {
         const subject = subjects.find(s => s.id === m.subjectId);
         return subject && subject.year === year && subject.semester === sem;
@@ -49,19 +41,19 @@ export function DashboardClient() {
     };
   }, [activeYear, activeSem]);
 
+  const syllabi = filteredData.materials.filter(m => m.type === 'Syllabus');
+  const notes = filteredData.materials.filter(m => m.type !== 'Syllabus');
+
   return (
     <div className="relative z-10 w-full overflow-hidden container py-8">
       <div className="flex flex-col items-center mb-12">
         <h1 className="text-4xl font-extrabold tracking-tight text-center">Dashboard</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground text-center">
-          Select a year and semester to explore all related academic materials.
+          Select a year and semester to explore all related academic materials for R-23.
         </p>
         <Tabs value={activeYear} onValueChange={setActiveYear} className="w-full max-w-md mt-8">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="1">Year 1</TabsTrigger>
-            <TabsTrigger value="2">Year 2</TabsTrigger>
+          <TabsList className="grid w-full grid-cols-1">
             <TabsTrigger value="3">Year 3</TabsTrigger>
-            <TabsTrigger value="4">Year 4</TabsTrigger>
           </TabsList>
         </Tabs>
         <ToggleGroup type="single" value={activeSem} onValueChange={(value) => {if(value) setActiveSem(value)}} className="mt-4">
@@ -75,9 +67,9 @@ export function DashboardClient() {
       </div>
 
       <SubjectsSection subjects={filteredData.subjects} programs={filteredData.programs} />
-      <SyllabusSection syllabi={filteredData.syllabi} subjects={filteredData.subjects} />
+      <SyllabusSection syllabi={syllabi} subjects={filteredData.subjects} />
       <AllProgramsSection programs={filteredData.programs} subjects={filteredData.subjects} />
-      <NotesSection notes={filteredData.notes} subjects={filteredData.subjects} />
+      <NotesSection notes={notes} subjects={filteredData.subjects} />
     </div>
   );
 }
