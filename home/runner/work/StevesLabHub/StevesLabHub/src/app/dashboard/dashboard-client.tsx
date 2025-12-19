@@ -24,7 +24,7 @@ export function DashboardClient() {
     // without causing a full page reload.
     const currentParams = new URLSearchParams(window.location.search);
     if (currentParams.get('year') !== activeYear || currentParams.get('sem') !== activeSem) {
-      router.replace(`?year=${activeYear}&sem=${activeSem}`, { scroll: false });
+      router.replace(`?year=${activeYear}&sem=${activeSem}#`, { scroll: false });
     }
   }, [activeYear, activeSem, router]);
 

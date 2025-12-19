@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Code, X, GraduationCap, LayoutDashboard, Gamepad2, Book, FileQuestion, StickyNote } from 'lucide-react';
+import { Menu, Code, X, GraduationCap, LayoutDashboard, Gamepad2, Book, FileText, StickyNote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger } from '@/components/ui/sheet';
@@ -20,8 +20,7 @@ const mainNavItems = [
 const mobileExtraNavItems = [
     { href: '/dashboard#subjects', label: 'Subjects', icon: Book },
     { href: '/dashboard#all-programs', label: 'Lab Programs', icon: Code },
-    { href: '/dashboard#study-materials', label: 'Study Materials', icon: FileQuestion },
-    { href: '/dashboard#notes', label: 'Notes & Links', icon: StickyNote },
+    { href: '/dashboard#study-materials', label: 'Study Materials', icon: FileText },
 ]
 
 export function Header() {

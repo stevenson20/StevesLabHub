@@ -33,13 +33,14 @@ export function SubjectPageClient({ subject, subjectPrograms, subjectMaterials }
     cns: 'text-pink-500',
     ws: 'text-indigo-500',
     sfs: 'text-teal-500',
+    default: 'text-foreground'
   };
 
   return (
     <>
       <div className="mb-8">
         <h1 className="text-4xl font-extrabold tracking-tight">
-          <span className={colorClasses[subject.color]}>{subject.shortTitle}</span>
+          <span className={colorClasses[subject.color || 'default']}>{subject.shortTitle}</span>
           <span className="text-foreground">: {subject.title}</span>
         </h1>
         <p className="mt-4 max-w-3xl text-lg text-muted-foreground">{subject.description}</p>

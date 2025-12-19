@@ -52,7 +52,7 @@ export interface Syllabus {
 export interface Material {
   id: string;
   subjectId: string;
-  type: 'Assignment' | 'Question Paper' | 'Notes' | 'Image' | 'Link' | 'Syllabus';
+  type: 'Assignment' | 'Question Paper' | 'Notes' | 'Image' | 'Link' | 'Syllabus' | 'PDF' | 'Document';
   title: string;
   url: string;
   fileType: 'PDF' | 'Image' | 'Link' | 'Document';

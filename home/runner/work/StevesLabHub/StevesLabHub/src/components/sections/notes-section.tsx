@@ -18,16 +18,17 @@ export function NotesSection({ notes, subjects }: NotesSectionProps) {
 
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setLoading(false);
         }, 300);
+        return () => clearTimeout(timer);
     }, [notes]);
 
     return (
-        <section id="notes" className="py-12 bg-muted/30">
+        <section id="study-materials" className="py-12 bg-muted/30">
             <div className="container">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Study Materials</h2>
+                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Study Materials & Links</h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Quick access to important documents, cheat sheets, and external resources.
                     </p>
@@ -45,7 +46,7 @@ export function NotesSection({ notes, subjects }: NotesSectionProps) {
                         ))}
                     </div>
                 ) : (
-                    <p className="text-center text-muted-foreground">No notes or links for this semester.</p>
+                    <p className="text-center text-muted-foreground">No materials or links for this semester.</p>
                 )}
             </div>
         </section>
