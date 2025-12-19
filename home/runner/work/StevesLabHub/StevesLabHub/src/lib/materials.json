@@ -2,6 +2,22 @@
 {
   "materials": [
     {
+      "id": "mat-ai-assign-1",
+      "subjectId": "23CS31P1",
+      "type": "Assignment",
+      "title": "AI Assignment 1: Search Algorithms",
+      "url": "/materials/ai-assignment-1.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "mat-cn-mid-1-2023",
+      "subjectId": "23CS31P2",
+      "type": "Question Paper",
+      "title": "CN & IP Mid Term 1 Question Paper (2023)",
+      "url": "/materials/cn-mid-1-2023.pdf",
+      "fileType": "PDF"
+    },
+    {
       "id": "mat-trw-ipr-tinkercad-manual",
       "subjectId": "23CS32AC",
       "type": "Notes",
