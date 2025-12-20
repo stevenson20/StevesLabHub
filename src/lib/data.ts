@@ -49,7 +49,6 @@ import y3s2_23CS32T3_prog from './data/year-3/sem-2/23CS32T3/programs.json';
 import y3s2_23CS32E2_sub from './data/year-3/sem-2/23CS32E2/subject.json';
 import y3s2_23CS32E2_prog from './data/year-3/sem-2/23CS32E2/programs.json';
 
-
 // All materials data is now embedded here to prevent JSON parsing errors.
 const materialsData = {
   "materials": [
@@ -386,3 +385,5 @@ export const materials: Material[] = materialsData.materials.map((m: any) => {
 
 export const notes: Note[] = [];
 export const syllabi: Syllabus[] = [];
+
+    
