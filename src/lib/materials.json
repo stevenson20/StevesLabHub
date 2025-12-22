@@ -1,34 +1,67 @@
 {
   "materials": [
     {
-<<<<<<< HEAD
-=======
-      "id": "mat-ai-assign-1",
-      "subjectId": "ai-lab",
-      "type": "Assignment",
-      "title": "AI Assignment 1: Search Algorithms",
-      "url": "/materials/ai-assignment-1.pdf",
+      "id": "syl-trw-ipr",
+      "subjectId": "23CS32AC",
+      "type": "Syllabus",
+      "title": "Technical Report Writing & IPR",
+      "url": "/syllabi/23CS32AC –TECHNICAL REPORT WRITING & IPR.pdf",
       "fileType": "PDF"
     },
     {
-      "id": "mat-cn-mid-1-2023",
-      "subjectId": "cn-ip-lab",
-      "type": "Question Paper",
-      "title": "CN & IP Mid Term 1 Question Paper (2023)",
-      "url": "/materials/cn-mid-1-2023.pdf",
+      "id": "syl-ml-lab",
+      "subjectId": "23CS32P1",
+      "type": "Syllabus",
+      "title": "Machine Learning Lab",
+      "url": "/syllabi/23CS32P1 – MACHINE LEARNING LAB.pdf",
       "fileType": "PDF"
     },
     {
->>>>>>> ce430c785e46d4c5658802902e6956a39489787c
+      "id": "syl-cns-lab",
+      "subjectId": "23CS32P2",
+      "type": "Syllabus",
+      "title": "Cryptography and Network Security Lab",
+      "url": "/syllabi/23CS32P2 – CRYPTOGRAPHY AND NETWORK SECURITY LAB.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "syl-soft-skills",
+      "subjectId": "23CS32SC",
+      "type": "Syllabus",
+      "title": "Soft Skills",
+      "url": "/syllabi/23CS32SC –SOFT SKILLS.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "syl-ml-theory",
+      "subjectId": "23CS32T1",
+      "type": "Syllabus",
+      "title": "Machine Learning",
+      "url": "/syllabi/23CS32T1 –MACHINE LEARNING.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "syl-cloud-computing",
+      "subjectId": "23CS32T2",
+      "type": "Syllabus",
+      "title": "Cloud Computing",
+      "url": "/syllabi/23CS32T2 –CLOUD COMPUTING.pdf",
+      "fileType": "PDF"
+    },
+    {
+      "id": "syl-cns-theory",
+      "subjectId": "23CS32T3",
+      "type": "Syllabus",
+      "title": "Cryptography & Network Security",
+      "url": "/syllabi/23CS32T3 –CRYPTOGRAPHY & NETWORK SECURITY.pdf",
+      "fileType": "PDF"
+    },
+    {
       "id": "mat-trw-ipr-tinkercad-manual",
       "subjectId": "23CS32AC",
       "type": "Notes",
       "title": "Tinkercad Lab Manual – TRW & IPR",
-<<<<<<< HEAD
-      "url": "/materials/trw-ipr-tinkercad-manual.pdf",
-=======
       "url": "/materials/TINKERCAD%20LAB%20MANUAL_CSE(DS)_13_08_25%20(1).pdf",
->>>>>>> ce430c785e46d4c5658802902e6956a39489787c
       "fileType": "PDF"
     },
     {
@@ -36,11 +69,7 @@
       "subjectId": "23CS31E4",
       "type": "Assignment",
       "title": "DW&M All Units Assignment Questions (2025–26) – R23",
-<<<<<<< HEAD
-      "url": "/materials/dwm-assignments-r23.pdf",
-=======
       "url": "/materials/DW%26M%20ALL%20UNITS%20%20ASSIGNMENT%20QUESTIONS(2025-26)%20R23.pdf",
->>>>>>> ce430c785e46d4c5658802902e6956a39489787c
       "fileType": "PDF"
     },
     {
@@ -48,8 +77,7 @@
       "subjectId": "23CS31E4",
       "type": "Question Paper",
       "title": "DW&M (R23) Model Paper (2025–26)",
-<<<<<<< HEAD
-      "url": "/materials/dwm-model-paper-r23.pdf",
+      "url": "/materials/DW%26M(R23)%20MODEL%20PAPER%202025-26.pdf",
       "fileType": "PDF"
     },
     {
@@ -61,103 +89,12 @@
       "fileType": "PDF"
     },
     {
-      "id": "note-tinker-sim-temp",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Temp & Humidity Monitor Simulation",
-      "url": "https://www.tinkercad.com/things/jCoseKCUo3i-20-dht11-temperature-and-humidity-sensor",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-water",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Water Level Alert System Simulation",
-      "url": "https://www.tinkercad.com/things/9DZbcf79kT8-",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-plant",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Automatic Plant Watering Simulation",
-      "url": "https://www.tinkercad.com/things/2cTfQT7fAno-automated-plant-watering-system",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-door",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Door Lock System Simulation",
-      "url": "https://www.tinkercad.com/things/cMDBAUzuXqA-door-lock",
-      "fileType": "Link"
-    },
-    {
       "id": "note-tinker-sim-dustbin",
       "subjectId": "23ES31P1",
       "type": "Link",
       "title": "Smart Dustbin Simulation",
       "url": "https://www.tinkercad.com/embed/kxwoGlM7BNY?editbtn=1",
       "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-fire",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Fire Detection System Simulation",
-      "url": "https://www.tinkercad.com/things/2X0n2iTvhY2-fire-alarm-system",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-soil",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Soil Moisture Irrigation Simulation",
-      "url": "https://www.tinkercad.com/things/eKtHRRkOZoA-",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-helmet",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Smart Helmet Simulation",
-      "url": "https://www.tinkercad.com/things/h7qvsrFRx9G-accident-prevention-and-detection",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-reactor",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "Temp Controlled Reactor Simulation",
-      "url": "https://www.tinkercad.com/things/fndGND1saJ4-automatic-room-temperature-controller",
-      "fileType": "Link"
-    },
-    {
-      "id": "note-tinker-sim-ecg",
-      "subjectId": "23ES31P1",
-      "type": "Link",
-      "title": "ECG Signal Acquisition Simulation",
-      "url": "https://www.tinkercad.com/things/hbXyygH4jbr-portable-electrocardiograph-ecg",
-      "fileType": "Link"
-    },
-    {
-      "id": "syllabus-ai",
-      "subjectId": "23CS31P1",
-      "type": "Syllabus",
-      "title": "AI Lab Syllabus",
-      "url": "/syllabi/ai-lab-syllabus.pdf",
-      "fileType": "PDF"
-    },
-    {
-      "id": "syllabus-cs",
-      "subjectId": "23CS32E2",
-      "type": "Syllabus",
-      "title": "Cyber Security Syllabus",
-      "url": "/syllabi/cyber-security-syllabus.pdf",
-=======
-      "url": "/materials/DW%26M(R23)%20MODEL%20PAPER%202025-26.pdf",
->>>>>>> ce430c785e46d4c5658802902e6956a39489787c
-      "fileType": "PDF"
     }
   ]
 }
